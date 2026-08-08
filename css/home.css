@@ -118,8 +118,8 @@ body{
     z-index: 2;
     position: absolute;
     width: 79%;
-    left: 37%;
-    top: -6%;
+    left: 38%;
+    top: -9%;
 }
 
 /* about us */
@@ -209,6 +209,7 @@ body{
 .aboutus .text h1 {
     color: var(--yellow);
     font-size: 46px;
+    border-bottom: #ffb300;
     text-align: left;
 }
 
@@ -297,7 +298,7 @@ body{
 .special-title3 {
     display: flex;
     align-items: center;
-    gap: 2px;
+    gap: 12px;
     margin: 117px 0 21px;
     width: 100%;
 }
@@ -618,7 +619,7 @@ body{
 
 .textv {
     position: relative;
-    text-align: ri;
+    text-align: left;
     color: var(--beige);
     z-index: 2;
      
@@ -652,10 +653,9 @@ body{
     z-index: 2;
     align-items: center;
     justify-content: space-between;
-
+    top: 23%;
     padding-left: 11%;
     padding-right: 11%;
-    bottom: -25%;
 
 }
 .map-container {
@@ -706,22 +706,4 @@ body{
     height: 15%;
 }
 /* footer */
-
-.footer {
-    position: relative; 
-
-    background-color: #1a3d75;
-    color: var(--beige);
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
- 
-    z-index: 10;
-    box-shadow: 0 8px 20px rgba(24, 2, 8, 0.2);
-}
-
-.footer p {
-    margin: 0;
-}
-
  
