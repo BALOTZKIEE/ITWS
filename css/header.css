@@ -1,0 +1,78 @@
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 93%;
+    height: 41px;
+    z-index: 1000;  
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:20px 54px;
+    background: var(--blue);
+
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+
+
+    /* SHADOW */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+#logo{
+    display: flex;
+    flex-direction: column;   /* Stack vertically */
+    line-height: 1;
+}
+
+#university{
+    text-align: center;
+    font-size: 12px;          /* Smaller */
+    text-decoration: none;
+    color: var(--beige);
+}
+
+#cafeteria{
+    font-size: 38px;          /* Bigger */
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--yellow);
+}
+
+.navbar ul{
+    display:flex;
+    list-style:none;
+    gap: 21px;
+    
+}
+.navbar a{
+    display: inline-block;
+    font-weight: bold;
+    font-size: 10px;
+    padding: 9px 36px;
+    border-radius: 17px;
+
+    background: transparent;
+    border: 2px solid var(--yellow);
+
+    color: var(--beige);
+    text-decoration: none;
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover{
+    background-color: var(--yellow);
+    color: var(--beige)
+}
+
+.navbar a.active{
+    background: var(--yellow);
+    color: var(--beige)
+}
+
+.navbar a.active{
+    background: var(--yellow);
+    color: var(--beige)
+}
+

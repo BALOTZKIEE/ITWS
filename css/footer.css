@@ -1,0 +1,18 @@
+.footer {
+    position: relative; 
+
+    background-color: #1a3d75;
+    color: var(--beige);
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+ 
+    z-index: 10;
+    box-shadow: 0 8px 20px rgba(24, 2, 8, 0.2);
+}
+
+.footer p {
+    margin: 0;
+}
+
+ 
