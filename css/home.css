@@ -61,7 +61,7 @@ body{
 
 
 .button-group {
-    display: inline-flex;
+    display: flex;
     gap: 20px;
     margin-top: 3px;
     
@@ -80,16 +80,18 @@ body{
     font-size: 13px;
     font-weight: bold;
     transition: all 0.3s ease;
-    }
+}
 
 .btn4 {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: #fff7eb;
+    color: white;
     background-color: var(--yellow);
+    border: solid;
     padding: 16px 40px;
     border-radius: 33px;
+    border-color: var(--yellow);
     font-size: 13px;
     font-weight: bold;
     transition: all 0.3s ease;
@@ -107,6 +109,8 @@ body{
     color: #fff7eb;
     text-decoration: none;
     background-color: #ffebbf;
+    
+    border-color: #ffebbf;
 }
 
 
