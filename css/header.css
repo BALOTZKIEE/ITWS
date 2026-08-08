@@ -3,7 +3,7 @@ header{
     top: 0;
     left: 0;
     width: 93%;
-    height: 41px;
+    height: 26px;
     z-index: 1000;  
     display:flex;
     justify-content: space-between;
@@ -27,13 +27,13 @@ header{
 
 #university{
     text-align: center;
-    font-size: 12px;          /* Smaller */
+    font-size: 11px;          /* Smaller */
     text-decoration: none;
     color: var(--beige);
 }
 
 #cafeteria{
-    font-size: 38px;          /* Bigger */
+    font-size: 27px;          /* Bigger */
     font-weight: 700;
     text-decoration: none;
     color: var(--yellow);
@@ -49,7 +49,7 @@ header{
     display: inline-block;
     font-weight: bold;
     font-size: 10px;
-    padding: 9px 36px;
+    padding: 8px 28px;
     border-radius: 17px;
 
     background: transparent;
