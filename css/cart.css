@@ -1,0 +1,118 @@
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: var(--beige);
+    padding: 0;
+    overflow-x: hidden; /* para sa horizontal scrolling */
+    overflow-y: auto;
+
+        width: 100.1%;
+    min-height: 100vh; /* Full screen height */
+}
+
+/* My Cart */
+
+.special-title2 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 129px 0 40px;
+    width: 100%;
+}
+
+.special-title2 .line:first-child {
+    flex: 1.5;              /* Short left line */
+    height: 5px;
+    background: var(--yellow);
+    border-radius: 10px;
+}
+
+.special-title2 .line:last-child {
+    flex: 5;              /* Long right line */
+    height: 5px;
+    background: var(--blue);
+    border-radius: 10px;
+}
+
+.special-title2 h2 {
+    margin: 0;
+    white-space: nowrap;
+    font-size: 36px;
+    color: var(--yellow);
+}
+
+.special-title2 h2 span {
+    color: var(--blue);
+}
+
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    gap: 8px;
+    padding: 22%;
+    padding-top: 0%;
+}
+    
+.div1 {
+    grid-column: span 6 / span 6;
+}
+
+.cart-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color:  var(--blue);
+}
+
+.cart-header p {
+    margin: 0;
+}
+
+.cart-header ul {
+    display: flex;
+    align-items: center;
+    gap: 77px;
+    margin: 0 0 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.div2 {
+    grid-column: span 6 / span 6;
+    grid-row: span 6 / span 6;
+    grid-row-start: 2;
+    background-color: var(--blue);
+    border-radius: 30px;
+}
+
+.div3 {
+    grid-column: span 6 / span 6;
+    grid-row-start: 8;
+    
+    
+}
+
+.div4 {
+    grid-column: span 3 / span 3;
+    grid-row-start: 9;
+    background-color: var(--yellow);
+    border-radius: 30px;
+    text-align: center;
+    color: var(--beige);
+    height: 100%;
+    font-size: 70%;
+}
+
+.div5 {
+    grid-column: span 3 / span 3;
+    grid-column-start: 4;
+    grid-row-start: 9;
+    background-color: var(--blue);
+    border-radius: 30px;
+    text-align: center;
+    color: var(--beige);
+    height: 100%;
+    font-size: 70%;
+}

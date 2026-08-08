@@ -214,7 +214,7 @@ body{
 
 .aboutus .text p {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 19px;
+    font-size: 17px;
     line-height: 25px;
     text-align: justify;
 }
@@ -342,7 +342,7 @@ body{
 
 .title1 {
     color: var(--blue);
-    font-size: 24px;
+    font-size: 30px;
     padding-top: 1%;
     padding-left: 3%;   
 }
@@ -404,7 +404,7 @@ body{
     transition: 0.3s ease;
     position: relative;
     left: 78%;
-    top: -3%;
+    top: -7%;
 
 }
 
