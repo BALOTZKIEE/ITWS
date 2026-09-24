@@ -1,0 +1,306 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--beige);
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100.1%;
+    min-height: 100vh;
+    
+}
+
+.special-title0{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+    margin: 116px 0 -115px;
+}
+.special-title0 h2{
+    font-size: 36px;
+    font-weight: bold;
+    color: #3b69b4;
+    margin: 0;
+}
+
+.special-title0 span{
+    color: #ffb300;
+}
+
+.line0{
+    flex: 1;
+    height: 4px;
+    background: #3b69b4;
+    border-radius: 10px;
+}
+
+.line0:first-child{
+    background:  #3b69b4;
+}
+
+.line0:last-child{
+    background: #ffb300;
+}
+
+.check {
+    margin-top: 12%;
+    width: 100%;
+    min-height: 75vh; /* Full screen height */
+}
+
+.overall {
+    display: flex;
+    gap: 66px;
+    align-items: center;
+    justify-content: center;
+}
+
+.overall h1 {
+    color: var(--beige);
+}
+
+
+.orderDetails {
+    text-align: center;
+    font-size: 13px;
+    background-color: var(--blue);
+    height: 433px;
+    width: 500px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(9, 1, 84, 0.2);
+
+}
+
+.paymentMethod {
+    text-align: center;
+    font-size: 13px;
+    background-color: var(--blue);
+    height: 433px;
+    width: 500px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(9, 1, 84, 0.2);
+}
+
+.confirm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -46px 504px 57px;
+    width: 494px;
+    height: 48px;
+    position: relative;
+    color: var(--beige);
+    background-color: var(--yellow);
+    border: 0px;
+    border-radius: 22px;
+    box-shadow: 0 4px 10px rgba(9, 1, 84, 0.2);
+    transition: 0.2s ease;
+}
+
+li a {
+    text-decoration: none;
+}
+
+.confirm:hover {
+    filter: brightness(1.2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(6, 43, 99, 0.25);
+}
+
+.confirm h1 {
+    font-size: 21px;
+}
+/* order details */
+
+form {
+    margin-top: 40px;
+}
+form > label {
+    position: relative;
+    text-align: left;
+    font-weight: bold;
+    
+}
+
+.studentLabel {
+    display: block;
+    text-align: left;
+    margin-left: 36px;
+    margin-bottom: -14px;
+    color: var(--yellow);
+}
+input[type="text"] {
+    width: 87%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 0px;
+    border-radius: 18px;
+    box-sizing: border-box;
+}
+
+input[type="text"]::placeholder {
+    color: #999;
+    
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border: none;
+    color: var(--blue);
+}
+
+.orderType {
+    color: var(--yellow);
+    font-size: 33px;
+}
+
+/* Radio circle */
+input[type="radio"] {
+    appearance: none;
+    width: 11px;
+    height: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Dine In / Take Out buttons */
+input[type="radio"] + label {
+    display: inline-block;
+    margin-right: 82px;
+    color: var(--beige);
+    cursor: pointer;
+    font-size: 18px;
+
+}
+
+.order-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-left: 93px;
+}
+
+input[type="radio"]:checked {
+    background-color: var(--yellow);
+    border: 2px solid white;
+}
+
+/* Selected button */
+input[type="radio"]:checked + label {
+    color: var(--yellow);
+}
+
+/* payment method */
+
+.method {
+    text-align: left;
+    margin: 40px 37px;
+    
+}
+
+
+.order-summary {
+    background-color: var(--yellow);
+    height: 186px;
+    margin-top: 33px;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 20px rgba(59, 99, 6, 0.25);
+
+}
+
+.order-summary h1 {
+    position: relative;
+    left: 13px;
+    top: 12px;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+    
+}
+.order-table tfoot td:first-child {
+    border-bottom-left-radius: 18px;
+}
+
+.order-table tfoot td:last-child {
+    border-bottom-right-radius: 18px;
+}
+
+.order-table th,
+.order-table td {
+    padding-left: 16px;
+    text-align: left;
+}
+
+.order-table th:nth-child(),
+.order-table td:nth-child(2) {
+    text-align: center;
+}
+
+.order-table th:last-child,
+.order-table td:last-child {
+    text-align: right;
+    padding-right: 19px;
+}
+
+/* Vertical scrolling */
+ 
+
+.scroll {
+    height: 128px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Keep header visible */
+.order-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgb(183, 143, 0);
+    color: #fff7eb;
+}
+
+.order-table tfoot {
+    position: sticky;
+    bottom: 0px;
+    z-index: 2;
+    background: var(--yellow);
+    color: #fff7eb;
+}
+
+.order-table tfoot td {
+    padding: 9px 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* scrollbar */
+.scroll::-webkit-scrollbar {
+    width: 2px;
+}
+
+.scroll::-webkit-scrollbar-track {
+    background: #fff7eb;
+    border-radius: 4px;
+    margin-top: 0px;
+    margin-bottom: 42px
+}
+
+
+.scroll::-webkit-scrollbar-thumb {
+    background: #aaa9a4;
+    border-radius: 8px;
+}
+
+.scroll::-webkit-scrollbar-thumb:hover {
+    background: #b5b9b9;
+}
