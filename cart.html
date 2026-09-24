@@ -9,205 +9,124 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/cart.css">
 </head>
+
 <body>
-    <header>
+
+<header>
     <div id="logo">
         <a href="#home" id="university">UNIVERSITY</a>
         <a href="#home" id="cafeteria">CAFETERIA</a>
     </div>
 
-        <nav class="navbar">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="menu.html">MENU</a></li>
-                <li><a href="cart.html" class="active">CART</a></li>
-                <li><a href="#checkOut">CHECK OUT</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="menu.html">MENU</a></li>
+            <li><a href="cart.html" class="active">CART</a></li>
+            <li><a href="#checkOut">CHECK OUT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <section class="special-title2">
-        <div class="line"></div>
-        <h2>
-            my <span>cart</span>
-        </h2>
-        <div class="line"></div>
-    </section>
+<section class="special-title2">
+    <div class="line"></div>
 
-    <div class="parent">
+    <h2>
+        my <span>cart</span>
+    </h2>
 
-    <div class="div1">
-        <div class="cart-header">
-            <p>Item</p>
-    <ul>
+    <div class="line"></div>
+</section>
+
+<section class="forCart"> 
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">ITEM</th>
+            <th>PRICE</th>
+            <th>QTY</th>
+            <th>SUBTOTAL</th>
+            <th>REMOVE</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>
+                <img src="images/food.jpg" class="img" alt="Bicol Express">
+            </td>
+            <td>BICOL XPRESS</td>
+            <td class="price">₱85</td>
+            <td>
+                <div class="quantity">
+                <button class="minus">−</button>
+                <span class="quantity-number">1</span>
+                <button class="plus">+</button>
+                </div>
+            </td>
+            <td class="price">₱85.00</td>
+            <td><button class="remove-btn">×</button></td>
+        </tr>
         
-        <li>Price</li>
-        <li>Qty</li>
-        <li>Subtotal</li>
-        <li>Remove</li>
-    </ul>
-</div>
-
-    </div>
-    <div class="div2">
-        <div class="cart-container">
-            <div class="cart1">
-                <div class="menu-part">
-                    <div class="item">
-                        <img src="images/food.jpg" class="img" alt="bicol">
-                        <p>BICOL EXPRESS</p>
-                    </div>
-                    <div class="price">
-                        <h3>₱85</h3>
-                    </div>
-                    <div class="qty">
-                        <div class="quantity">
-                            <button class="minus">−</button>
-                            <span class="quantity-number">1</span>
-                            <button class="plus">+</button>
-                        </div>
-
-                    </div>
-                    <div class="subtotal">
-                        <h3>₱85.00</h3>
-                    </div>
-                    <div class="remove">
-                        <button class="remove-btn">×</button>
-                    </div>
+        <tr>
+            <td>
+                <img src="images/food.jpg" class="img" alt="Bicol Express">
+            </td>
+            <td>BICOL XPRESS</td>
+            <td class="price">₱85</td>
+            <td>
+                <div class="quantity">
+                <button class="minus">−</button>
+                <span class="quantity-number">1</span>
+                <button class="plus">+</button>
                 </div>
-            </div>
-
-    <div class="cart2">
-        <div class="cart1">
-                <div class="menu-part">
-                    <div class="item">
-                        <img src="images/food.jpg" class="img" alt="bicol">
-                        <p>BICOL EXPRESS</p>
-                    </div>
-                    <div class="price">
-                        <h3>₱85</h3>
-                    </div>
-                    <div class="qty">
-                        <div class="quantity">
-                            <button class="minus">−</button>
-                            <span class="quantity-number">1</span>
-                            <button class="plus">+</button>
-                        </div>
-
-                    </div>
-                    <div class="subtotal">
-                        <h3>₱85.00</h3>
-                    </div>
-                    <div class="remove">
-                        <button class="remove-btn">×</button>
-                    </div>
+            </td>
+            <td class="price">₱85.00</td>
+            <td><button class="remove-btn">×</button></td>
+        </tr>
+        <tr>
+            <td>
+                <img src="images/food.jpg" class="img" alt="Bicol Express">
+            </td>
+            <td>BICOL XPRESS</td>
+            <td class="price">₱85</td>
+            <td>
+                <div class="quantity">
+                <button class="minus">−</button>
+                <span class="quantity-number">1</span>
+                <button class="plus">+</button>
                 </div>
-            </div>
-    </div>
-    <div class="cart3">
-        <div class="cart1">
-                <div class="menu-part">
-                    <div class="item">
-                        <img src="images/food.jpg" class="img" alt="bicol">
-                        <p>BICOL EXPRESS</p>
-                    </div>
-                    <div class="price">
-                        <h3>₱85</h3>
-                    </div>
-                    <div class="qty">
-                        <div class="quantity">
-                            <button class="minus">−</button>
-                            <span class="quantity-number">1</span>
-                            <button class="plus">+</button>
-                        </div>
+            </td>
+            <td class="price">₱85.00</td>
+            <td><button class="remove-btn">×</button></td>
+        </tr>
 
-                    </div>
-                    <div class="subtotal">
-                        <h3>₱85.00</h3>
-                    </div>
-                    <div class="remove">
-                        <button class="remove-btn">×</button>
-                    </div>
-                </div>
-            </div>
-    </div>
-    <div class="cart4">
-        <div class="cart1">
-                <div class="menu-part">
-                    <div class="item">
-                        <img src="images/food.jpg" class="img" alt="bicol">
-                        <p>BICOL EXPRESS</p>
-                    </div>
-                    <div class="price">
-                        <h3>₱85</h3>
-                    </div>
-                    <div class="qty">
-                        <div class="quantity">
-                            <button class="minus">−</button>
-                            <span class="quantity-number">1</span>
-                            <button class="plus">+</button>
-                        </div>
 
-                    </div>
-                    <div class="subtotal">
-                        <h3>₱85.00</h3>
-                    </div>
-                    <div class="remove">
-                        <button class="remove-btn">×</button>
-                    </div>
-                </div>
-            </div>
-    </div>
-    <div class="cart5">
-        <div class="cart1">
-                <div class="menu-part">
-                    <div class="item">
-                        <img src="images/food.jpg" class="img" alt="bicol">
-                        <p>BICOL EXPRESS</p>
-                    </div>
-                    <div class="price">
-                        <h3>₱85</h3>
-                    </div>
-                    <div class="qty">
-                        <div class="quantity">
-                            <button class="minus">−</button>
-                            <span class="quantity-number">1</span>
-                            <button class="plus">+</button>
-                        </div>
-
-                    </div>
-                    <div class="subtotal">
-                        <h3>₱85.00</h3>
-                    </div>
-                    <div class="remove">
-                        <button class="remove-btn">×</button>
-                    </div>
-                </div>
-            </div>
-    </div>
-</div>
-    </div>
-    <div class="div3">
-        <div class="tp">
-            <h1 class="total">TOTAL: </h1>
-            <h1 class="peso">₱</h1>
-            <h1 class="price">100</h1>
-        </div>
-    </div>
-    <button class="conshop">
-        <h1>continue shopping</h1>
-    </button>
-    <button class="checkout">
-        <h1>checkout</h1>
-    </button>
-</div>
+        <tr>
+            <td colspan="6">TOTAL: </td>
+        </tr>
+                <tr>
+            <td colspan="3">            
+                <button class="conshop">
+                <h1>Continue Shopping</h1>
+                </button>
+            </td>
+            <td colspan="3">            
+                <button class="checkout">
+                <h1>Checkout</h1>
+            </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</section>
 
 <footer class="footer">
     <div class="footer-container">
-
         <div class="footer-brand">
             <h2>University Cafeteria</h2>
+
             <p>
                 Your convenient way to explore the menu and discover
                 delicious meals at the NEUST University Cafeteria.
@@ -222,17 +141,18 @@
             <a href="contact.html">Contact</a>
         </div>
 
-    <div class="footer-explore">
-        <h3>Explore</h3>
-        <p>🍽️ Meals</p>
-        <p>🥤 Drinks</p>
-        <p>🍪 Snacks</p>
+        <div class="footer-explore">
+            <h3>Explore</h3>
+            <p>🍽️ Meals</p>
+            <p>🥤 Drinks</p>
+            <p>🍪 Snacks</p>
+        </div>
     </div>
-
-    </div>
-
     <div class="footer-bottom">
-        <p>© 2026 NEUST University Cafeteria. All Rights Reserved. This is a student project and is not an official NEUST website.</p>
+        <p>
+            © 2026 NEUST University Cafeteria. All Rights Reserved.
+            This is a student project and is not an official NEUST website.
+        </p>
     </div>
 </footer>
 </body>
