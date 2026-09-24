@@ -44,8 +44,10 @@ header{
     list-style:none;
     gap: 21px;
     
+    
 }
 .navbar a{
+    
     display: inline-block;
     font-weight: bold;
     font-size: 10px;
@@ -76,3 +78,92 @@ header{
     color: var(--beige)
 }
 
+
+
+/* SMALL TABLET */
+@media (max-width: 800px){
+
+    header{
+        padding: 20px 20px;
+    }
+
+    #cafeteria{
+        font-size: 21px;
+    }
+
+    #university{
+        font-size: 8px;
+    }
+
+    .navbar ul{
+        gap: 6px;
+    }
+
+    .navbar a{
+        font-size: 8px;
+        padding: 6px 10px;
+    }
+}
+
+
+/* MOBILE */
+@media (max-width: 600px){
+
+    header{
+        height: auto;
+        min-height: 65px;
+        padding: 2px 18px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+
+    #logo{
+        flex-shrink: 0;
+    }
+
+    #cafeteria{
+        font-size: 18px;
+    }
+
+    #university{
+        font-size: 7px;
+    }
+
+    .navbar ul{
+        gap: 5px;
+    }
+
+    .navbar a{
+        font-size: 7px;
+        padding: 5px 7px;
+        border-width: 1px;
+        border-radius: 10px;
+    }
+}
+
+
+/* VERY SMALL PHONES */
+@media (max-width: 400px){
+
+    header{
+        padding: 10px 12px;
+    }
+
+    #cafeteria{
+        font-size: 16px;
+    }
+
+    #university{
+        font-size: 6px;
+    }
+
+    .navbar ul{
+        gap: 3px;
+    }
+
+    .navbar a{
+        font-size: 6px;
+        padding: 4px 5px;
+        border-radius: 8px;
+    }
+}
