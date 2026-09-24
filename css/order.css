@@ -1,0 +1,283 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--beige);
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.special-title0 {
+    margin-top: 87px;
+    display: relative;
+    line-height: 15px;
+}
+
+.special-title0 h1 {
+    font-size: 29px;
+    font-weight: bold;
+    color: #3b69b4;
+    margin: 0;
+}
+
+.special-title0 span {
+    color: #ffb300;
+}
+
+.special-title0 p {
+    color: var(--blue);
+}
+
+.order {
+    margin-top: 10%;
+    margin-bottom: 4%;
+    width: 100%;
+    min-height: 75vh;
+}
+
+
+/* TOP TWO BOXES */
+
+.alignment {
+    display: grid;
+    grid-template-columns: 545px 545px;
+    gap: 18px;
+    justify-content: center;
+}
+
+
+/* BOTTOM TWO BOXES */
+
+.alignment2 {
+    display: grid;
+    grid-template-columns: 545px 545px;
+    gap: 18px;
+    justify-content: center;
+}
+
+
+/* BLUE CONTAINERS */
+
+.order-container {
+    display: flex;
+    gap: 31px;
+}
+
+.order-container2 {
+    height: 204px;
+    width: 545px;
+    padding: 0;
+    margin: 19px 0;
+    background-color: var(--yellow);
+    border-radius: 30px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.25);
+}
+
+.order-container2 table {
+    padding: 10px;
+    width: 97%;
+    text-align: right;
+    font-size: 20px;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    color: white;
+
+}
+
+.order-container2 td:first-child {
+    text-align: left;
+}
+
+.order-container3 {
+    display: flex;
+    height: 163px;
+    width: 536px;
+    padding: 0;
+    margin: 19px 0;
+    border: solid var(--blue) 6px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 30px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.25);
+}
+
+.textTime {
+    position: relative;
+    top: 28px;
+    left: 93px;
+    line-height: 16px;
+}
+.order-container3 h2 {
+    color: var(--yellow);
+}
+
+.order-container3 h1 {
+    color: var(--blue);
+}
+
+
+
+
+/* ORDER SUMMARY */
+
+.order-summary {
+    background-color: var(--blue);
+    height: 155px;
+    width: 511px;
+    margin: 19px 0 0 0;
+    border-radius: 18px;
+    padding: 10px;
+    box-shadow: 0 8px 20px rgba(59, 99, 6, 0.25);
+}
+
+
+/* TABLE */
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+}
+
+.order-table tfoot td:first-child {
+    border-bottom-left-radius: 18px;
+}
+
+.order-table tfoot td:last-child {
+    border-bottom-right-radius: 18px;
+}
+
+.order-table th,
+.order-table td {
+    padding-left: 16px;
+    text-align: left;
+}
+
+.order-table th:nth-child(2),
+.order-table td:nth-child(2) {
+    text-align: center;
+}
+
+.order-table th:last-child,
+.order-table td:last-child {
+    text-align: right;
+    padding-right: 19px;
+}
+
+
+/* VERTICAL SCROLLING */
+
+.scroll {
+    height: 156px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* KEEP HEADER VISIBLE */
+
+.order-table thead {
+    font-size: 21px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--blue);
+    color: #fff7eb;
+}
+
+.order-table tfoot {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    background: var(--blue);
+    color: #fff7eb;
+}
+
+.order-table tfoot td {
+    padding: 9px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* SCROLLBAR */
+
+.scroll::-webkit-scrollbar {
+    width: 0;
+}
+
+.scroll::-webkit-scrollbar-track {
+    background: #fff7eb;
+    border-radius: 4px;
+    margin-top: 0;
+    margin-bottom: 42px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    background: #aaa9a4;
+    border-radius: 8px;
+}
+
+.scroll::-webkit-scrollbar-thumb:hover {
+    background: #b5b9b9;
+}
+
+.check-circle { 
+    position: relative;
+    
+   
+    width: 202px; 
+    height: 194px; 
+    border-radius: 50%; 
+    background-color: var(--yellow); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: var(--beige); 
+    font-size: 150px; 
+    font-weight: bold; 
+}
+
+.clock {
+    width: 124px;
+    height: 118px;
+    border: 5px solid var(--blue);
+    border-radius: 50%;
+    position: relative;
+    top: 18px;
+    left: 50px;
+    background-color: var(--beige);
+}
+
+.hand {
+    position: absolute;
+    background-color: var(--blue);
+    border-radius: 10px;
+    transform-origin: bottom center;
+    left: 50%;
+    bottom: 50%;
+}
+
+.hour {
+    width: 5px;
+    height: 20px;
+    transform: translateX(-50%) rotate(-7deg);
+}
+
+.minute {
+    width: 4px;
+    height: 27px;
+    transform: translateX(-50%) rotate(135deg);
+}
+
+.center {
+    width: 9px;
+    height: 9px;
+    background-color: var(--blue);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEUST</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/checkOut.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+
+    <header>
+        <div id="logo">
+            <a href="#home" id="university">UNIVESITY</a>
+            <a href="#home" id="cafeteria">CAFETERIA</a>
+        </div>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="cart.html">CART</a></li>
+                <li><a href="checkOut.html" class="active">CHECK OUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="special-title0">
+        <div class="line0"></div>
+
+        <h2>
+            CHECk <span>OUT</span>
+        </h2>
+
+        <div class="line0"></div>
+    </section>
+
+    <section class="check">
+        <div class="overall">
+
+            <div class="orderDetails">
+                <h1>ORDER DETAILS</h1>
+
+                <form>
+                    <label class="studentLabel" for="name">STUDENT NAME</label>
+                    <br>
+
+                    <input type="text" id="name" name="name" placeholder="ENTER YOUR NAME">
+
+                    <br><br>
+
+                    <label class="studentLabel" for="name">STUDENT ID</label>
+                    <br>
+
+                    <input type="text" id="idNum" name="idNum" placeholder="Enter your student id">
+
+                    <br><br><br><br>
+
+                    <label class="orderType">Order Type</label>
+                    <br><br>
+
+                    <div class="order-options">
+                        <input type="radio" id="dinein" name="orderType" value="Dine In">
+                        <label for="dinein">Dine In</label>
+
+                        <input type="radio" id="takeout" name="orderType" value="Take Out">
+                        <label for="takeout">Take Out</label>
+                    </div>
+                </form>
+            </div>
+
+            <div class="paymentMethod">
+                <h1>PAYMENT METHOD</h1>
+
+                <div class="method">
+                    <input type="radio" id="cash" name="methodType" value="cash">
+                    <label for="cash">CASH</label>
+
+                    <br><br><br>
+
+                    <input type="radio" id="gcash" name="methodType" value="gcash">
+                    <label for="gcash">GCASH</label>
+
+                    <div class="order-summary">
+                        <h1>ORDER SUMMARY</h1>
+
+                        <div class="scroll">
+                            <table class="order-table">
+                                <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Qty</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>BICOL EXPRESS</td>
+                                        <td>2x</td>
+                                        <td>₱85</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>CHICKEN ADOBO</td>
+                                        <td>1x</td>
+                                        <td>₱75</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>SISIG RICE MEAL</td>
+                                        <td>3x</td>
+                                        <td>₱90</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>FRENCH FRIES</td>
+                                        <td>1x</td>
+                                        <td>₱45</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>CHEESEBURGER</td>
+                                        <td>2x</td>
+                                        <td>₱65</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>ICED TEA</td>
+                                        <td>3x</td>
+                                        <td>₱35</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>HALO-HALO</td>
+                                        <td>1x</td>
+                                        <td>₱55</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>LUMPIA SHANGHAI</td>
+                                        <td>2x</td>
+                                        <td>₱50</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>SPAGHETTI</td>
+                                        <td>1x</td>
+                                        <td>₱70</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>CHOCOLATE MILK</td>
+                                        <td>2x</td>
+                                        <td>₱40</td>
+                                    </tr>
+                                </tbody>
+
+                                <tfoot>
+                                    <tr>
+                                        <td></td>
+                                        <td>Total:</td>
+                                        <td>₱170</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <li>
+        <a href="order.html">
+            <button class="confirm">
+                <h1>Confirm Order</h1>
+            </button>
+        </a>
+    </li>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <h2>University Cafeteria</h2>
+                <p>
+                    Your convenient way to explore the menu and discover
+                    delicious meals at the NEUST University Cafeteria.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-explore">
+                <h3>Explore</h3>
+                <p>🍽️ Meals</p>
+                <p>🥤 Drinks</p>
+                <p>🍪 Snacks</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                © 2026 NEUST University Cafeteria. All Rights Reserved.
+                This is a student project and is not an official NEUST website.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
