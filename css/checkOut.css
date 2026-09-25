@@ -89,12 +89,12 @@ body{
     justify-content: center;
     margin: -46px 504px 57px;
     width: 494px;
-    height: 48px;
+    height: 61px;
     position: relative;
     color: var(--beige);
     background-color: var(--yellow);
     border: 0px;
-    border-radius: 22px;
+    border-radius: 34px;
     box-shadow: 0 4px 10px rgba(9, 1, 84, 0.2);
     transition: 0.2s ease;
 }

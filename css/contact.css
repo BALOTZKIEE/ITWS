@@ -147,10 +147,10 @@ body{
 
 .contact-form button {
     width: 106%;
-    height: 37px;
+    height: 41px;
 
     border: none;
-    border-radius: 15px;
+    border-radius: 32px;
 
     background-color: var(--yellow);
 
