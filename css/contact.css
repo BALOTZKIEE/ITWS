@@ -201,3 +201,123 @@ body{
     text-align: justify;
 }
 
+@media (max-width: 768px) {
+
+    /* TITLE */
+
+    .special-title0 {
+        margin-top: 33px;
+        margin-bottom: -54px;
+        gap: 10px;
+    }
+
+    .special-title0 h2 {
+        font-size: 28px;
+        white-space: nowrap;
+    }
+
+    .line0 {
+        height: 4px;
+    }
+
+
+    /* CONTACT */
+
+    .contact {
+        margin-top: 99px;
+        min-height: auto;
+        padding: 0 20px 40px;
+        box-sizing: border-box;
+    }
+
+
+    /* MAIN CONTAINER */
+
+    .contact-container {
+        width: 82%;
+        max-width: 550px;
+        height: auto;
+        min-height: 700px;
+        margin: 80px auto 0;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        border-radius: 25px;
+        box-sizing: border-box;
+        margin-bottom: 40px;
+    }
+
+
+    /* LEFT SIDE */
+
+    .contact-form {
+        width: 91%;
+        top: 0;
+        flex-shrink: 1;
+    }
+
+    .contact-form form {
+        width: 100%;
+    }
+
+
+    /* LABELS */
+
+    .contact-form label {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+
+
+    /* INPUTS */
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+    }
+
+    .contact-form input {
+        height: 42px;
+        margin-bottom: 12px;
+    }
+
+    .contact-form textarea {
+        height: 90px;
+        margin-bottom: 12px;
+    }
+
+
+    /* BUTTON */
+
+    .contact-form button {
+        width: 108%;
+        height: 38px;
+    }
+
+
+    /* RIGHT SIDE */
+
+    .contact-info {
+        width: 100%;
+        padding-top: 0;
+        margin-right: 0;
+        box-sizing: border-box;
+    }
+
+
+    /* RIGHT TITLE */
+
+    .contact-info h1 {
+        font-size: 30px;
+        margin-bottom: 8px;
+    }
+
+
+    /* DESCRIPTION */
+
+    .contact-info p {
+        font-size: 14px;
+        line-height: 1.45;
+        text-align: justify;
+    }
+}

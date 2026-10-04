@@ -6,7 +6,7 @@ body{
     overflow-x: hidden; /* para sa horizontal scrolling */
     overflow-y: auto;
 
-    width: 100%;
+    width: 99%;
     min-height: 100vh; /* Full screen height */
 
 }
@@ -213,3 +213,115 @@ ul, li {
     box-shadow: 0 8px 20px rgba(6, 43, 99, 0.25);
 }
 
+@media (max-width: 768px) {
+
+    /* Title */
+
+    .special-title2 {
+        margin-top: 100px;
+        gap: 10px;
+        width: auto;
+    }
+
+    .special-title2 h2 {
+        font-size: 28px;
+    }
+
+    .special-title2 .line:first-child,
+    .special-title2 .line:last-child {
+        height: 4px;
+    }
+
+
+    /* Cart Area */
+
+    .forCart {
+        width: 100%;
+        min-height: auto;
+        padding: 20px 0 40px;
+        display: block;
+    }
+
+
+    /* Table */
+
+    table {
+        width: 92%;
+        margin: 30px auto;
+        border-radius: 20px;
+        font-size: 13px;
+    }
+
+    thead th {
+        padding: 14px 8px;
+        font-size: 7px;
+        letter-spacing: 0.5px;
+    }
+
+    thead th:nth-child(1) {
+        padding-left: 15px;
+    }
+
+    tbody td {
+        padding: 14px 6px;
+        font-size: 10px;
+    }
+
+
+    /* Product Image */
+
+    img {
+        width: 80px;
+        height: 50px;
+        border-radius: 8px;
+    }
+
+
+    /* Quantity */
+
+    .quantity {
+        gap: 6px;
+    }
+
+    .quantity button {
+        width: 19px;
+        height: 19px;
+        font-size: 11px;
+    }
+
+    .quantity-number {
+        min-width: 15px;
+        font-size: 13px;
+    }
+
+
+    /* Remove */
+
+    .remove-btn {
+        width: 19px;
+        height: 19px;
+        font-size: 11px;
+    }
+
+
+    /* Total */
+
+    tbody tr:nth-last-child(2) td {
+        padding: 18px 12px;
+        font-size: 17px;
+    }
+
+
+    /* Buttons */
+
+    .conshop,
+    .checkout {
+        height: 45px;
+    }
+
+    .conshop h1,
+    .checkout h1 {
+        font-size: 13px;
+        letter-spacing: 0.5px;
+    }
+}

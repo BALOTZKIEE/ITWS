@@ -304,3 +304,124 @@ input[type="radio"]:checked + label {
 .scroll::-webkit-scrollbar-thumb:hover {
     background: #b5b9b9;
 }
+
+@media (max-width: 768px) {
+
+    /* Title */
+
+    .special-title0 {
+        margin-top: 100px;
+        margin-bottom: -70px;
+        gap: 10px;
+    }
+
+    .special-title0 h2 {
+        font-size: 28px;
+        white-space: nowrap;
+    }
+
+    .line0 {
+        height: 4px;
+    }
+
+
+    /* Checkout area */
+
+    .check {
+        margin-top: 110px;
+        width: 100%;
+        min-height: auto;
+    }
+
+    .overall {
+        flex-direction: column;
+        gap: 25px;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+
+    /* Cards */
+
+    .orderDetails,
+    .paymentMethod {
+        width: 89%;
+        max-width: 500px;
+        height: 433px;
+        border-radius: 25px;
+        box-sizing: border-box;
+    }
+
+
+    /* Student Input */
+
+    .studentLabel {
+        margin-left: 25px;
+    }
+
+    input[type="text"] {
+        width: 88%;
+    }
+
+
+    /* Order Type */
+
+    .orderType {
+        font-size: 28px;
+    }
+
+    .order-options {
+        margin-left: 0;
+        gap: 5px;
+    }
+
+    input[type="radio"] + label {
+        margin-right: 25px;
+        font-size: 16px;
+    }
+
+
+    /* Payment Method */
+
+    .method {
+        margin: 35px 25px;
+    }
+
+
+    /* Order Summary */
+
+    .order-summary {
+        height: 186px;
+        margin-top: 30px;
+    }
+
+    .order-table th,
+    .order-table td {
+        padding-left: 10px;
+        font-size: 12px;
+    }
+
+    .order-table th:last-child,
+    .order-table td:last-child {
+        padding-right: 10px;
+    }
+
+    .order-table tfoot td {
+        padding: 8px 10px;
+        font-size: 17px;
+    }
+
+
+    /* Confirm Button */
+
+    .confirm {
+        width: 305px;
+        height: 55px;
+        margin: 25px auto 45px;
+    }
+
+    .confirm h1 {
+        font-size: 18px;
+    }
+}
