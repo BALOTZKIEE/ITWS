@@ -6,7 +6,7 @@ body{
     overflow-x: hidden; /* para sa horizontal scrolling */
     overflow-y: auto;
 
-    width: 99%;
+    width: 100%;
     min-height: 100vh; /* Full screen height */
 
 }
@@ -17,7 +17,7 @@ body{
     display: flex;
     align-items: center;
     gap: 15px;
-    margin: 120px 0 -1px;
+    margin: 120px 0px 0px;
     width: 100%;
 }
 

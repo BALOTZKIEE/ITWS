@@ -143,11 +143,12 @@ body {
 
 .order-summary {
     background-color: var(--blue);
-    height: 155px;
+    overflow: hidden;
+    height: 176px;
     width: 511px;
     margin: 19px 0 0 0;
     border-radius: 18px;
-    padding: 10px;
+    padding: 1px;
     box-shadow: 0 8px 20px rgba(59, 99, 6, 0.25);
 }
 
@@ -157,7 +158,7 @@ body {
    ========================= */
 
 .order-table {
-    width: 100%;
+    width: 100%; 
     border-collapse: collapse;
     color: white;
 }
@@ -172,7 +173,8 @@ body {
 
 .order-table th,
 .order-table td {
-    padding-left: 16px;
+    padding-left: 19px;
+    padding-top: 9px;
     text-align: left;
 }
 
@@ -193,7 +195,7 @@ body {
    ========================= */
 
 .scroll {
-    height: 156px;
+    height: 177px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -204,9 +206,10 @@ body {
    ========================= */
 
 .order-table thead {
-    font-size: 21px;
+    padding: 9px;
+    font-size: 15px;
     position: sticky;
-    top: 0;
+    top: 0px;
     z-index: 10;
     background: var(--blue);
     color: #fff7eb;
@@ -214,14 +217,14 @@ body {
 
 .order-table tfoot {
     position: sticky;
-    bottom: 0;
+    bottom: 0px;
     z-index: 2;
     background: var(--blue);
     color: #fff7eb;
 }
 
 .order-table tfoot td {
-    padding: 9px 0;
+    padding: 9px;
     font-size: 20px;
     font-weight: bold;
 }
@@ -430,14 +433,14 @@ body {
 
     .order-table th,
     .order-table td {
-        padding-top: 8px;
-        padding-left: 10px;
+        padding-top: 7px;
+        padding-left: 20px;
         font-size: 13px;
     }
 
     .order-table th:last-child,
     .order-table td:last-child {
-        padding-right: 10px;
+        padding-right: 20px;
     }
 
     .order-table thead {
@@ -445,7 +448,7 @@ body {
     }
 
     .order-table tfoot td {
-        padding: 8px 5px;
+        padding: 14px 5px;
         font-size: 17px;
     }
 
