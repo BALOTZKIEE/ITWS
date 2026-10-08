@@ -117,6 +117,7 @@ body {
 }
 /* Menu Card */
 .menu-card {
+    height: 313px;
     padding: 16px;
     background: var(--blue);
     border-radius: 30px;
@@ -137,33 +138,36 @@ body {
 }
 /* Food Name */
 .menu-card .name h3 {
-    margin: 15px 0 5px;
+    margin: 15px 0 6px;
     color: var(--yellow);
     font-size: 20px;
 }
 /* Price */
 .menu-card .price p {
-    margin: 5px 0 15px;
+    margin: 5px 0 26px;
     color: var(--beige);
     font-size: 18px;
     font-weight: bold;
     font-family:'Gill Sans','Gill Sans MT',Calibri,'Trebuchet MS',sans-serif;
 }
 /* Add To Cart */
-.add-to-cart button {
-    width: 100%;
+.add-to-cart a {
+    text-decoration: none;
+    width: 152px;
     margin: 0 auto;
-    padding: 13px;
+    padding: 12px;
+    padding-left: 54px;
+    padding-right: 54px;
     border: none;
-    border-radius: 30px;
+    border-radius: 32px;
     background: var(--yellow);
     color: var(--beige);
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
 }
-.add-to-cart button:hover {
+.add-to-cart a:hover {
     filter: brightness(1.2);
     transform: translateY(-2px);
 }
@@ -263,27 +267,30 @@ li a {
     }
 
     .menu-card .image img {
-        height: 96px;
+        height: 106px;
         border-radius: 14px;
     }
 
     .menu-card .name h3 {
-        font-size: 19px;
-        margin: 13px 0 5px;
+        font-size: 16px;
+        margin: 13px 0 3px;
     }
 
     .menu-card .price p {
-        font-size: 17px;
+        font-size: 15px;
+        margin: 13px 0 2px;
     }
 
 
     /* ADD TO CART */
 
-    .add-to-cart button {
+    .add-to-cart a {
         position: relative;
         top: 15px;
-        width: 125px;
-        padding: 9px;
+        width: 144px;
+        padding: 11px;
+        padding-left: 22px;
+        padding-right: 22px;
         font-size: 10px;
     }
 
