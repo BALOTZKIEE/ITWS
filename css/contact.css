@@ -54,7 +54,9 @@ body{
 /* MAIN BLUE CONTAINER */
 
 .contact-container {
-    margin: 179px;
+    overflow: hidden;
+    margin: 166px;
+    margin-bottom: 79px;
     height: 386px;
     padding: 30px;
     background-color: var(--blue);
@@ -172,152 +174,176 @@ body{
 
 .contact-info {
     flex: 1;
-
     padding-top: 80px;
-    margin-right: 36px;
+    margin-right: -396px;
+}
+
+.cict3 {
+    position: relative;
+    z-index: 1;
+    height: 577px;
+    left: -29px;
+    top: -314px;
+    filter: opacity(0.2) blur(1px) brightness(0.7);
+}
+
+.contact-info {
+    position: relative;
+    z-index: 10;
 }
 
 /* TITLE */
-
 .contact-info h1 {
+    position: relative;
+    z-index: 11;
+
     margin-bottom: 5px;
-
     color: var(--yellow);
-
     font-size: 37px;
     font-weight: 900;
-
     line-height: 1;
 }
 
-
 /* DESCRIPTION */
-
 .contact-info p {
+    position: relative;
+    z-index: 11;
+    width: 521px;
     color: white;
     font-size: 15px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     line-height: 1.35;
     text-align: justify;
 }
 
+/* RESPONSIVE: 768px */
 @media (max-width: 768px) {
 
-    /* TITLE */
+    body {
+        overflow-x: hidden;
+    }
 
+    /* SECTION TITLE */
     .special-title0 {
-        margin-top: 92px;
-        margin-bottom: -54px;
         gap: 10px;
+        margin: 90px 0px 27px 0px;
     }
 
     .special-title0 h2 {
-        font-size: 28px;
-        white-space: nowrap;
+        font-size: 27px;
+        text-align: center;
     }
 
     .line0 {
-        height: 4px;
+        height: 3px;
+        min-width: 28px;
     }
 
-
-    /* CONTACT */
-
+    /* CONTACT SECTION */
     .contact {
-        margin-top: 99px;
+        margin-top: 100px;
         min-height: auto;
-        padding: 0 20px 40px;
+        padding: 0 20px;
         box-sizing: border-box;
     }
-
 
     /* MAIN CONTAINER */
-
     .contact-container {
-        width: 82%;
-        max-width: 550px;
-        height: auto;
-        min-height: 700px;
-        margin: 80px auto 0;
-        display: flex;
         flex-direction: column;
         gap: 35px;
-        border-radius: 25px;
+
+        width: 86%;
+        height: auto;
         box-sizing: border-box;
-        margin-bottom: 40px;
+        margin: 0 auto 60px;
+        padding: 30px 25px;
+
+        border-radius: 25px;
     }
 
-
-    /* LEFT SIDE */
-
+    /* CONTACT FORM */
     .contact-form {
-        width: 91%;
+        position: relative;
         top: 0;
-        flex-shrink: 1;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .contact-form form {
         width: 100%;
     }
 
-
-    /* LABELS */
-
     .contact-form label {
-        font-size: 15px;
-        margin-bottom: 8px;
+        font-size: 16px;
+        margin-bottom: 9px;
     }
-
-
-    /* INPUTS */
 
     .contact-form input,
     .contact-form textarea {
         width: 100%;
+        box-sizing: border-box;
     }
 
     .contact-form input {
-        height: 42px;
-        margin-bottom: 12px;
+        height: 43px;
+        margin-bottom: 14px;
     }
 
     .contact-form textarea {
-        height: 90px;
-        margin-bottom: 12px;
+        height: 100px;
     }
-
-
-    /* BUTTON */
 
     .contact-form button {
-        width: 108%;
-        height: 38px;
+        width: 100%;
+        height: 43px;
     }
 
-
-    /* RIGHT SIDE */
-
+    /* CONTACT INFORMATION */
     .contact-info {
+        position: relative;
+        z-index: 10;
+
+        flex: none;
         width: 100%;
         padding-top: 0;
         margin-right: 0;
         box-sizing: border-box;
     }
 
-
-    /* RIGHT TITLE */
-
     .contact-info h1 {
+        position: relative;
+        z-index: 11;
         font-size: 30px;
-        margin-bottom: 8px;
+        line-height: 1.15;
+        overflow-wrap: break-word;
     }
 
-
-    /* DESCRIPTION */
-
     .contact-info p {
+        position: relative;
+        z-index: 11;
+
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+
         font-size: 14px;
-        line-height: 1.45;
-        text-align: justify;
+        line-height: 1.5;
+        text-align: left;
+        overflow-wrap: break-word;
+    }
+
+    /* CICT BACKGROUND */
+    .cict3 {
+        position: absolute;
+        z-index: 0;
+
+        width: 116%;
+        height: 116%;
+        left: -6;
+        top: 0;
+
+        object-fit: cover;
+        filter: opacity(0.15) blur(1px) brightness(0.7);
+        pointer-events: none;
     }
 }

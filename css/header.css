@@ -11,71 +11,132 @@ header{
     padding:20px 54px;
     background: var(--blue);
 
-    border-bottom-left-radius: 60px;
-    border-bottom-right-radius: 60px;
-
     /* SHADOW */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-#logo{
+.align1{
+    position: relative;
+    left: -16px;
     display: flex;
-    flex-direction: column;   /* Stack vertically */
-    line-height: 1;
+    gap: 0px;
+}
+
+.logo2 {
+    justify-content: center;
+    align-items: center;
+    width: 77px;
+    height: auto;
+
+}
+
+#logo{
+    position: relative;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
 }
 
 #university{
-    
-    text-align: center;
-    font-size: 11px;          /* Smaller */
+    margin-bottom: -6px;
+    text-align: left;
+    font-size: 16px;          /* Smaller */
     text-decoration: none;
     color: var(--beige);
 }
 
 #cafeteria{
-    font-size: 27px;          /* Bigger */
+    text-align: left;
+    font-size: 18px;          /* Bigger */
     font-weight: 700;
     text-decoration: none;
     color: var(--yellow);
 }
 
 .navbar ul{
-    display:flex;
-    list-style:none;
-    gap: 21px;
+    display: flex;
+    list-style: none;
+    gap: 0px;
     
     
 }
-.navbar a{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+/* NAVBAR LINKS */
+.navbar a {
+    position: relative;
     display: inline-block;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
     font-size: 10px;
-    padding: 8px 28px;
+    padding: 12px 16px;
     border-radius: 17px;
-
-    background: transparent;
-    border: 2px solid var(--yellow);
 
     color: var(--beige);
     text-decoration: none;
-
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.navbar a:hover{
+/* UNDERLINE */
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    right: 14px;
+    bottom: 7px;
+
+    height: 3px;
+    background-color: var(--beige);
+    border-radius: 2px;
+
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+/* APPEARING TRANSITION */
+.navbar a:hover::after,
+.navbar a.active::after {
+    transform: scaleX(1);
+}
+
+.navbar a[href="cart.html"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
     background-color: var(--yellow);
-    color: var(--beige)
+    width: 90px;
+    padding: 8px 12px;
+    box-sizing: border-box;
+
+    transition: filter 0.3s ease;
 }
 
-.navbar a.active{
-    background: var(--yellow);
-    color: var(--beige)
+.shopIcon {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+    object-fit: contain;
 }
 
-.navbar a.active{
-    background: var(--yellow);
-    color: var(--beige)
+/* CART BUTTON */
+.navbar a[href="cart.html"] {
+    background-color: var(--yellow);
+    transition: filter 0.3s ease;
+}
+
+/* CART HOVER */
+.navbar a[href="cart.html"]:hover {
+    filter: brightness(1.30);
+}
+
+/* REMOVE CART UNDERLINE */
+.navbar a[href="cart.html"]::after {
+    display: none;
 }
 
 
@@ -84,23 +145,27 @@ header{
 
     header {
         width: 100%;
-        height: auto;
+        height: 50px;
         box-sizing: border-box;
         padding: 12px 18px;
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
     }
 
+    .align1 {
+        left: 0px;
+    }
+    .logo2 {
+        width: 50px;
+    }
     #logo {
         flex-shrink: 0;
     }
 
     #university {
-        font-size: 7px;
+        font-size: 10px;
     }
 
     #cafeteria {
-        font-size: 17px;
+        font-size: 10px;
     }
 
     .navbar ul {
