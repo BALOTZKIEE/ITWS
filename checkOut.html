@@ -1,9 +1,12 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
     <title>NEUST University Cafeteria</title>
 
     <link rel="stylesheet" href="css/header.css">
@@ -14,182 +17,164 @@
 
 <body>
 
+    <!-- HEADER -->
     <header>
         <div class="align1">
-        <img src="images/logo1.svg" class="logo2" alt="loading">
-        <div id="logo">
-            <a href="#home" id="university">UNIVERSITY</a>
-            <a href="#home" id="cafeteria">CAFETERIA</a>
+            <img src="images/logo1.svg" class="logo2" alt="University Cafeteria Logo">
+
+            <div id="logo">
+                <a href="index.html" id="university">UNIVERSITY</a>
+                <a href="index.html" id="cafeteria">CAFETERIA</a>
+            </div>
         </div>
-        </div>
-        
+
         <nav class="navbar">
             <ul>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="menu.html">MENU</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="cart.html" class="active">
-                    <img src="images/shopping-cart.png" class="shopIcon" alt="cart">CART</a></li>
+                <li>
+                    <a href="cart.html" class="active">
+                        <img src="images/shopping-cart.png" class="shopIcon" alt="">
+                        CART
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
 
+    <!-- PAGE TITLE -->
     <section class="special-title0">
         <div class="line0"></div>
-
-        <h2>
-            CHECk <span>OUT</span>
-        </h2>
-
+        <h2>CHECK <span>OUT</span></h2>
         <div class="line0"></div>
     </section>
 
+    <!-- CHECKOUT CONTENT -->
     <section class="check">
+
         <div class="overall">
 
+            <!-- ORDER DETAILS AND PAYMENT -->
             <div class="orderDetails">
+
                 <h1>ORDER DETAILS</h1>
 
-                <form>
-                    <label class="studentLabel" for="name">STUDENT NAME</label>
-                    <br>
+                <form id="checkout-form">
 
-                    <input type="text" id="name" name="name" placeholder="ENTER YOUR NAME">
+                    <label class="studentLabel" for="name">
+                        STUDENT NAME
+                    </label>
 
-                    <br><br>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="ENTER YOUR NAME"
+                        required
+                    >
 
-                    <label class="studentLabel" for="name">STUDENT ID</label>
-                    <br>
+                    <label class="studentLabel" for="idNum">
+                        STUDENT ID
+                    </label>
 
-                    <input type="text" id="idNum" name="idNum" placeholder="Enter your student id">
+                    <input
+                        type="text"
+                        id="idNum"
+                        name="idNum"
+                        placeholder="ENTER YOUR STUDENT ID"
+                        required
+                    >
 
-                    <br><br><br><br>
+                    <!-- PAYMENT METHOD -->
+                    <h2 class="payment-title">PAYMENT METHOD</h2>
 
-                    <label class="orderType">Order Type</label>
-                    <br><br>
+                    <div class="payment-options">
 
-                    <div class="order-options">
-                        <input type="radio" id="dinein" name="orderType" value="Dine In">
-                        <label for="dinein">Dine In</label>
+                        <label class="payment-option" for="cash">
+                            <input
+                                type="radio"
+                                id="cash"
+                                name="methodType"
+                                value="cash"
+                                required
+                            >
+                            <span>CASH</span>
+                        </label>
 
-                        <input type="radio" id="takeout" name="orderType" value="Take Out">
-                        <label for="takeout">Take Out</label>
+                        <label class="payment-option" for="gcash">
+                            <input
+                                type="radio"
+                                id="gcash"
+                                name="methodType"
+                                value="gcash"
+                            >
+                            <span>GCASH</span>
+                        </label>
+
                     </div>
+
                 </form>
+
             </div>
 
+            <!-- ORDER SUMMARY -->
             <div class="paymentMethod">
-                <h1>PAYMENT METHOD</h1>
 
-                <div class="method">
-                    <input type="radio" id="cash" name="methodType" value="cash">
-                    <label for="cash">CASH</label>
+                <div class="order-summary">
 
-                    <br><br><br>
+                    <h1>ORDER SUMMARY</h1>
 
-                    <input type="radio" id="gcash" name="methodType" value="gcash">
-                    <label for="gcash">GCASH</label>
+                    <div class="scroll">
 
-                    <div class="order-summary">
-                        <h1>ORDER SUMMARY</h1>
+                        <table class="order-table">
 
-                        <div class="scroll">
-                            <table class="order-table">
-                                <thead>
-                                    <tr>
-                                        <th>Item</th>
-                                        <th>Qty</th>
-                                        <th>Price</th>
-                                    </tr>
-                                </thead>
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Qty</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
 
-                                <tbody>
-                                    <tr>
-                                        <td>BICOL EXPRESS</td>
-                                        <td>2x</td>
-                                        <td>₱85</td>
-                                    </tr>
+                            <tbody id="summary-items">
+                                <!-- JavaScript will display cart items here -->
+                            </tbody>
 
-                                    <tr>
-                                        <td>CHICKEN ADOBO</td>
-                                        <td>1x</td>
-                                        <td>₱75</td>
-                                    </tr>
+                            <tfoot>
+                                <tr>
+                                    <td></td>
+                                    <td>Total:</td>
+                                    <td id="summary-total">₱0.00</td>
+                                </tr>
+                            </tfoot>
 
-                                    <tr>
-                                        <td>SISIG RICE MEAL</td>
-                                        <td>3x</td>
-                                        <td>₱90</td>
-                                    </tr>
+                        </table>
 
-                                    <tr>
-                                        <td>FRENCH FRIES</td>
-                                        <td>1x</td>
-                                        <td>₱45</td>
-                                    </tr>
+                        <p id="summary-empty">
+                            Your cart is empty.
+                        </p>
 
-                                    <tr>
-                                        <td>CHEESEBURGER</td>
-                                        <td>2x</td>
-                                        <td>₱65</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>ICED TEA</td>
-                                        <td>3x</td>
-                                        <td>₱35</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>HALO-HALO</td>
-                                        <td>1x</td>
-                                        <td>₱55</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>LUMPIA SHANGHAI</td>
-                                        <td>2x</td>
-                                        <td>₱50</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>SPAGHETTI</td>
-                                        <td>1x</td>
-                                        <td>₱70</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>CHOCOLATE MILK</td>
-                                        <td>2x</td>
-                                        <td>₱40</td>
-                                    </tr>
-                                </tbody>
-
-                                <tfoot>
-                                    <tr>
-                                        <td></td>
-                                        <td>Total:</td>
-                                        <td>₱170</td>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                        </div>
                     </div>
+
                 </div>
+
             </div>
 
         </div>
+
+        <!-- CONFIRM ORDER -->
+        <div class="confirm-container">
+            <a href="order.html" class="confirm" id="confirm-order">
+                <h1>Confirm Order</h1>
+            </a>
+        </div>
+
     </section>
 
-    <li>
-        <a href="order.html">
-            <button class="confirm">
-                <h1>Confirm Order</h1>
-            </button>
-        </a>
-    </li>
-
+    <!-- FOOTER -->
     <footer class="footer">
+
         <div class="footer-container">
 
             <div class="footer-brand">
@@ -223,7 +208,11 @@
                 This is a student project and is not an official NEUST website.
             </p>
         </div>
+
     </footer>
+
+    <!-- EXTERNAL JAVASCRIPT -->
+    <script src="js/checkOut.js"></script>
 
 </body>
 </html>

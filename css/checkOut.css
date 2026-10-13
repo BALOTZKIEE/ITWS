@@ -1,323 +1,392 @@
-body{
+body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--beige);
     padding: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
     width: 100%;
     min-height: 100vh;
-    
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--beige);
+    overflow-x: hidden;
 }
 
-.special-title0{
+
+/* PAGE TITLE */
+
+.special-title0 {
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 15px;
-    margin: 116px 0 -115px;
+    margin: 116px 0 0;
 }
-.special-title0 h2{
+
+.special-title0 h2 {
     font-size: 36px;
     font-weight: bold;
     color: #3b69b4;
     margin: 0;
+    white-space: nowrap;
 }
 
-.special-title0 span{
+.special-title0 span {
     color: #ffb300;
 }
 
-.line0{
+.line0 {
     flex: 1;
     height: 4px;
     background: #3b69b4;
     border-radius: 10px;
 }
 
-.line0:first-child{
-    background:  #3b69b4;
-}
-
-.line0:last-child{
+.line0:last-child {
     background: #ffb300;
 }
 
+
+/* CHECKOUT LAYOUT */
+
 .check {
-    margin-top: 12%;
     width: 100%;
-    min-height: 75vh; /* Full screen height */
+    margin: 50px 0 60px;
 }
 
 .overall {
     display: flex;
-    gap: 66px;
-    align-items: center;
     justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    width: 100%;
+    padding: 0 30px;
+    box-sizing: border-box;
 }
 
-.overall h1 {
-    color: var(--beige);
-}
 
+/* LEFT CARD */
 
 .orderDetails {
-    text-align: center;
-    font-size: 13px;
-    background-color: var(--blue);
-    height: 433px;
     width: 500px;
-    border-radius: 30px;
-    box-shadow: 0 4px 10px rgba(9, 1, 84, 0.2);
-
-}
-
-.paymentMethod {
-    text-align: center;
-    font-size: 13px;
-    background-color: var(--blue);
     height: 433px;
-    width: 500px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    padding: 10px 25px;
+    text-align: center;
+    background-color: var(--blue);
     border-radius: 30px;
     box-shadow: 0 4px 10px rgba(9, 1, 84, 0.2);
 }
 
-.confirm {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: -46px 504px 57px;
-    width: 494px;
-    height: 61px;
-    position: relative;
+.orderDetails h1,
+.paymentMethod h1 {
     color: var(--beige);
-    background-color: var(--yellow);
-    border: 0px;
-    border-radius: 34px;
-    box-shadow: 0 4px 10px rgba(9, 1, 84, 0.2);
-    transition: 0.2s ease;
+    font-size: 32px;
 }
 
-li a {
-    text-decoration: none;
-}
-
-.confirm:hover {
-    filter: brightness(1.2);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(6, 43, 99, 0.25);
-}
-
-.confirm h1 {
-    font-size: 21px;
-}
-/* order details */
-
-form {
-    margin-top: 40px;
-}
-form > label {
-    position: relative;
+.orderDetails form {
+    margin-top: 30px;
     text-align: left;
-    font-weight: bold;
-    
 }
+
+
+/* STUDENT INPUTS */
 
 .studentLabel {
     display: block;
-    text-align: left;
-    margin-left: 36px;
-    margin-bottom: -14px;
+    margin: 18px 0 8px 8px;
     color: var(--yellow);
+    font-size: 13px;
+    font-weight: bold;
 }
+
 input[type="text"] {
-    width: 87%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 0px;
-    border-radius: 18px;
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
     box-sizing: border-box;
+    border: none;
+    border-radius: 18px;
+    background-color: white;
+    font-size: 13px;
 }
 
 input[type="text"]::placeholder {
     color: #999;
-    
 }
 
 input[type="text"]:focus {
-    outline: none;
-    border: none;
+    outline: 2px solid var(--yellow);
     color: var(--blue);
 }
 
-.orderType {
+
+/* PAYMENT METHOD */
+
+.payment-title {
+    margin-top: 33px;
+    text-align: center;
     color: var(--yellow);
-    font-size: 33px;
+    font-size: 32px;
 }
 
-/* Radio circle */
+.payment-options {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-left: 135px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--beige);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.payment-option span {
+    transition: color 0.2s ease;
+}
+
+.payment-option:has(input:checked) span {
+    color: var(--yellow);
+}
+
 input[type="radio"] {
     appearance: none;
-    width: 11px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    flex-shrink: 0;
     border: 2px solid white;
     border-radius: 50%;
     background-color: white;
     cursor: pointer;
 }
 
-/* Dine In / Take Out buttons */
-input[type="radio"] + label {
-    display: inline-block;
-    margin-right: 82px;
-    color: var(--beige);
-    cursor: pointer;
-    font-size: 18px;
-
-}
-
-.order-options {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-left: 93px;
-}
-
 input[type="radio"]:checked {
     background-color: var(--yellow);
-    border: 2px solid white;
+    border-color: white;
 }
 
-/* Selected button */
-input[type="radio"]:checked + label {
-    color: var(--yellow);
+
+/* RIGHT CARD */
+
+.paymentMethod {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 433px;
+    min-width: 0;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: var(--yellow);
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(9, 1, 84, 0.2);
 }
 
-/* payment method */
 
-.method {
-    text-align: left;
-    margin: 40px 37px;
-    
-}
-
+/* ORDER SUMMARY */
 
 .order-summary {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
     background-color: var(--yellow);
-    height: 186px;
-    margin-top: 33px;
     border-radius: 18px;
-
-    box-shadow: 0 8px 20px rgba(59, 99, 6, 0.25);
-
 }
 
 .order-summary h1 {
-    position: relative;
-    left: 13px;
-    top: 12px;
-}
-
-.order-table {
-    width: 100%;
-    border-collapse: collapse;
-    color: white;
-    
-}
-.order-table tfoot td:first-child {
-    border-bottom-left-radius: 18px;
-}
-
-.order-table tfoot td:last-child {
-    border-bottom-right-radius: 18px;
-}
-
-.order-table th,
-.order-table td {
-    padding-left: 16px;
-    text-align: left;
-}
-
-.order-table th:nth-child(),
-.order-table td:nth-child(2) {
+    flex-shrink: 0;
+    margin: 0;
+    padding: 8px 15px;
+    font-size: 32px;
     text-align: center;
 }
 
-.order-table th:last-child,
-.order-table td:last-child {
-    text-align: right;
-    padding-right: 19px;
-}
 
-/* Vertical scrolling */
- 
+/* SCROLL AREA */
 
 .scroll {
-    height: 128px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+
+/* ORDER TABLE */
+
+.order-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    border-collapse: collapse;
+    color: white;
+}
+
+
+/* TABLE HEADER */
+
+.order-table thead {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    flex-shrink: 0;
+    background: rgb(183, 143, 0);
+    color: var(--beige);
+}
+
+
+/* SCROLLABLE FOOD ITEMS */
+
+.order-table tbody {
+    display: block;
+    flex: 1;
+    min-height: 0;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-/* Keep header visible */
-.order-table thead {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background: rgb(183, 143, 0);
-    color: #fff7eb;
+.order-table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
 }
 
+
+/* TABLE CELLS */
+
+.order-table th,
+.order-table td {
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+.order-table th:nth-child(1),
+.order-table td:nth-child(1) {
+    width: 40%;
+}
+
+.order-table th:nth-child(2),
+.order-table td:nth-child(2) {
+    width: 25%;
+    text-align: center;
+}
+
+.order-table th:nth-child(3),
+.order-table td:nth-child(3) {
+    width: 35%;
+    text-align: right;
+    padding-right: 16px;
+}
+
+
+/* TOTAL PRICE AT THE BOTTOM */
+
 .order-table tfoot {
-    position: sticky;
-    bottom: 0px;
-    z-index: 2;
-    background: var(--yellow);
-    color: #fff7eb;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    flex-shrink: 0;
+    background-color: var(--yellow);
+    color: var(--beige);
 }
 
 .order-table tfoot td {
-    padding: 9px 0px;
-    font-size: 20px;
+    padding: 12px;
+    font-size: 18px;
     font-weight: bold;
 }
 
-/* scrollbar */
-.scroll::-webkit-scrollbar {
-    width: 2px;
+
+/* EMPTY CART */
+
+#summary-empty {
+    display: none;
+    flex-shrink: 0;
+    padding: 15px;
+    margin: 0;
+    text-align: center;
+    color: var(--blue);
 }
 
-.scroll::-webkit-scrollbar-track {
-    background: #fff7eb;
+
+/* SCROLLBAR */
+
+.order-table tbody::-webkit-scrollbar {
+    width: 4px;
+}
+
+.order-table tbody::-webkit-scrollbar-track {
+    background: var(--beige);
     border-radius: 4px;
-    margin-top: 0px;
-    margin-bottom: 42px
 }
 
-
-.scroll::-webkit-scrollbar-thumb {
+.order-table tbody::-webkit-scrollbar-thumb {
     background: #aaa9a4;
     border-radius: 8px;
 }
 
-.scroll::-webkit-scrollbar-thumb:hover {
-    background: #b5b9b9;
+
+/* CONFIRM BUTTON */
+
+.confirm-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
+
+.confirm {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    width: 494px;
+    max-width: 90%;
+    height: 61px;
+    color: var(--beige);
+    background-color: var(--yellow);
+    border: none;
+    border-radius: 34px;
+    box-shadow: 0 4px 10px rgba(9, 1, 84, 0.2);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.confirm:hover {
+    filter: brightness(1.1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(6, 43, 99, 0.25);
+}
+
+.confirm h1 {
+    margin: 0;
+    font-size: 21px;
+}
+
+
+/* MOBILE */
 
 @media (max-width: 768px) {
 
-    /* Title */
+    /* PAGE TITLE */
 
     .special-title0 {
         margin-top: 100px;
-        margin-bottom: -70px;
         gap: 10px;
     }
 
     .special-title0 h2 {
         font-size: 28px;
-        white-space: nowrap;
     }
 
     .line0 {
@@ -325,80 +394,83 @@ input[type="radio"]:checked + label {
     }
 
 
-    /* Checkout area */
+    /* STACK THE CARDS */
 
     .check {
-        margin-top: 110px;
-        width: 100%;
-        min-height: auto;
+        margin-top: 40px;
     }
 
     .overall {
         flex-direction: column;
+        align-items: center;
         gap: 25px;
-        width: 100%;
         padding: 0 20px;
-        box-sizing: border-box;
     }
 
 
-    /* Cards */
+    /* CARD WIDTHS */
 
     .orderDetails,
     .paymentMethod {
-        width: 89%;
+        width: 100%;
         max-width: 500px;
-        height: 433px;
+        flex-shrink: 1;
         border-radius: 25px;
-        box-sizing: border-box;
+    }
+
+    .orderDetails {
+        height: 433px;
+        padding: 10px 22px;
+    }
+
+    .paymentMethod {
+        height: 550px;
+        padding: 15px;
     }
 
 
-    /* Student Input */
+    /* INPUTS */
+
+    .orderDetails form {
+        margin-top: 25px;
+    }
 
     .studentLabel {
-        margin-left: 25px;
+        margin-left: 5px;
     }
 
     input[type="text"] {
-        width: 88%;
+        padding: 11px;
     }
 
 
-    /* Order Type */
+    /* PAYMENT OPTIONS */
 
-    .orderType {
-        font-size: 28px;
+    .payment-title {
+        font-size: 20px;
+        margin-top: 25px;
     }
 
-    .order-options {
-        margin-left: 0;
-        gap: 5px;
+    .payment-options {
+        gap: 20px;
+        flex-wrap: wrap;
     }
 
-    input[type="radio"] + label {
-        margin-right: 25px;
-        font-size: 16px;
-    }
-
-
-    /* Payment Method */
-
-    .method {
-        margin: 35px 25px;
+    .payment-option {
+        font-size: 14px;
     }
 
 
-    /* Order Summary */
+    /* ORDER SUMMARY */
 
-    .order-summary {
-        height: 186px;
-        margin-top: 30px;
+    .order-summary h1 {
+        padding: 15px 12px;
+        font-size: 20px;
     }
 
     .order-table th,
     .order-table td {
-        padding-left: 10px;
+        padding: 9px 8px;
         font-size: 12px;
     }
 
@@ -408,17 +480,19 @@ input[type="radio"]:checked + label {
     }
 
     .order-table tfoot td {
-        padding: 8px 10px;
-        font-size: 17px;
+        font-size: 16px;
     }
 
 
-    /* Confirm Button */
+    /* CONFIRM BUTTON */
+
+    .confirm-container {
+        margin-top: 25px;
+    }
 
     .confirm {
         width: 305px;
         height: 55px;
-        margin: 25px auto 45px;
     }
 
     .confirm h1 {

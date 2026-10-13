@@ -1,48 +1,136 @@
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Get the elements from cart.html
+// Get elements
 let cartItems = document.querySelector('#cart-items');
 let cartTotal = document.querySelector('#cart-total');
 let emptyMessage = document.querySelector('#empty-cart');
 let cartTable = document.querySelector('#cart-table');
 
+// Prices
+let ricePrice = 10;
+let takeOutFee = 10;
 
-// FUNCTION 1: Display the cart
+
+// FUNCTION 1: Display cart
 function displayCart() {
 
     cart = JSON.parse(localStorage.getItem('cart')) || [];
+
     cartItems.innerHTML = '';
     let total = 0;
 
-    // Check if the cart is empty
     if (cart.length === 0) {
         emptyMessage.style.display = 'block';
         cartTable.style.display = 'none';
-
         cartTotal.textContent = 'TOTAL: ₱0.00';
-
         return;
+    } else {
+        emptyMessage.style.display = 'none';
+        cartTable.style.display = 'table';
     }
 
-    // If the cart has items, show the table
-    emptyMessage.style.display = 'none';
-    cartTable.style.display = 'table';
-
-
-    // Display each item in the cart
     cart.forEach(function(item, index) {
 
-        let subtotal = item.price * item.quantity;
+        let isStandaloneRice = item.standaloneRice === true;
+        let isMeal = item.category === 'meals' && !isStandaloneRice;
 
-        // Add the subtotal to the total
-        total = total + subtotal;
+        // Set default values for meals
+        if (isMeal && item.riceQuantity === undefined) {
+            item.riceQuantity = item.quantity;
+        }
 
+        if (isMeal && item.orderType === undefined) {
+            item.orderType = 'dine-in';
+        }
 
-        // Create a table row for the item
+        // Calculate rice adjustment
+        let riceAdjustment = 0;
+
+        if (isMeal) {
+            riceAdjustment = (item.riceQuantity - item.quantity) * ricePrice;
+        } else {
+            riceAdjustment = 0;
+        }
+
+        // Calculate take-out fee
+        let takeOutAdjustment = 0;
+
+        if (isMeal && item.orderType === 'take-out') {
+            takeOutAdjustment = takeOutFee * item.quantity;
+        } else {
+            takeOutAdjustment = 0;
+        }
+
+        // Calculate subtotal
+        let subtotal = (item.price * item.quantity)
+            + riceAdjustment
+            + takeOutAdjustment;
+
+        total += subtotal;
+
+        // Rice quantity HTML
+        let riceInput = '';
+
+        if (isMeal) {
+            riceInput = `
+                <input type="number"
+                    class="rice-qty"
+                    data-index="${index}"
+                    min="0"
+                    step="1"
+                    value="${item.riceQuantity}"
+                    required>
+            `;
+        } else {
+            riceInput = 'N/A';
+        }
+
+        // Order type HTML
+        let orderSelect = '';
+
+        if (isMeal) {
+
+            let dineInSelected = '';
+            let takeOutSelected = '';
+
+            if (item.orderType === 'dine-in') {
+                dineInSelected = 'selected';
+            } else {
+                dineInSelected = '';
+            }
+
+            if (item.orderType === 'take-out') {
+                takeOutSelected = 'selected';
+            } else {
+                takeOutSelected = '';
+            }
+
+            orderSelect = `
+                <select class="order-type"
+                    data-index="${index}">
+
+                    <option value="dine-in" ${dineInSelected}>
+                        Dine In
+                    </option>
+
+                    <option value="take-out" ${takeOutSelected}>
+                        Take Out (+₱10)
+                    </option>
+
+                </select>
+            `;
+
+        } else {
+            orderSelect = 'N/A';
+        }
+
+        // Create row
         let row = `
             <tr>
                 <td>
-                    <img src="${item.image}" alt="${item.name}" class="img">
+                    <img src="${item.image}"
+                        alt="${item.name}"
+                        class="img">
                 </td>
 
                 <td>${item.name}</td>
@@ -53,7 +141,6 @@ function displayCart() {
 
                 <td>
                     <div class="quantity">
-
                         <button type="button"
                             class="minus-btn"
                             data-index="${index}">−</button>
@@ -65,8 +152,15 @@ function displayCart() {
                         <button type="button"
                             class="plus-btn"
                             data-index="${index}">+</button>
-
                     </div>
+                </td>
+
+                <td>
+                    ${riceInput}
+                </td>
+
+                <td>
+                    ${orderSelect}
                 </td>
 
                 <td class="price">
@@ -81,76 +175,116 @@ function displayCart() {
             </tr>
         `;
 
-        // Add the row to the table
-        cartItems.innerHTML = cartItems.innerHTML + row;
-
+        cartItems.innerHTML += row;
     });
 
+    // Save updated cart
+    localStorage.setItem('cart', JSON.stringify(cart));
 
-    // Display the final total
+    // Display total
     cartTotal.textContent = 'TOTAL: ₱' + total.toFixed(2);
-
 }
 
 
-// FUNCTION 2: Handle the cart buttons
+// FUNCTION 2: Food quantity and remove buttons
 cartItems.addEventListener('click', function(event) {
 
-    // Get the button that was clicked
     let button = event.target;
 
-    // Check if the clicked element is a button
     if (button.tagName !== 'BUTTON') {
         return;
     }
 
-    // Get the item's position in the cart array
     let index = Number(button.dataset.index);
+    let item = cart[index];
 
-
-    // If the plus button was clicked
-    if (button.classList.contains('plus-btn')) {
-
-        cart[index].quantity = cart[index].quantity + 1;
-
-    }
-
-    // If the minus button was clicked
-    else if (button.classList.contains('minus-btn')) {
-
-        if (cart[index].quantity > 1) {
-
-            cart[index].quantity = cart[index].quantity - 1;
-
-        } else {
-
-            // Remove the item if its quantity is already 1
-            cart.splice(index, 1);
-
-        }
-
-    }
-
-    // If the remove button was clicked
-    else if (button.classList.contains('remove-btn')) {
-
-        cart.splice(index, 1);
-
-    }
-
-    else {
+    if (!item) {
         return;
     }
 
+    let isStandaloneRice = item.standaloneRice === true;
+    let isMeal = item.category === 'meals' && !isStandaloneRice;
 
-    // Save the updated cart
+    if (button.classList.contains('plus-btn')) {
+
+        item.quantity++;
+
+        if (isMeal) {
+            item.riceQuantity = (item.riceQuantity || 0) + 1;
+        } else {
+            // No rice adjustment for non-meals
+        }
+
+    } else if (button.classList.contains('minus-btn')) {
+
+        if (item.quantity > 1) {
+
+            item.quantity--;
+
+            if (isMeal) {
+                item.riceQuantity = Math.max(
+                    0,
+                    (item.riceQuantity || 0) - 1
+                );
+            } else {
+                // No rice adjustment for non-meals
+            }
+
+        } else {
+            cart.splice(index, 1);
+        }
+
+    } else if (button.classList.contains('remove-btn')) {
+
+        cart.splice(index, 1);
+
+    } else {
+        return;
+    }
+
     localStorage.setItem('cart', JSON.stringify(cart));
-
-    // Refresh the cart display
     displayCart();
-
 });
 
 
-// Display the cart when the page opens
+// FUNCTION 3: Rice quantity
+cartItems.addEventListener('change', function(event) {
+
+    if (!event.target.classList.contains('rice-qty')) {
+        return;
+    }
+
+    let index = Number(event.target.dataset.index);
+    let value = event.target.value;
+    let quantity = Number(value);
+
+    if (value === '' || !Number.isInteger(quantity) || quantity < 0) {
+        displayCart();
+        return;
+    } else {
+        cart[index].riceQuantity = quantity;
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    displayCart();
+});
+
+
+// FUNCTION 4: Order type
+cartItems.addEventListener('change', function(event) {
+
+    if (!event.target.classList.contains('order-type')) {
+        return;
+    }
+
+    let index = Number(event.target.dataset.index);
+
+    cart[index].orderType = event.target.value;
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    displayCart();
+});
+
+
+// Display cart when page opens
 displayCart();

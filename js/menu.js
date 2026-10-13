@@ -1,47 +1,59 @@
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
 let addToCartButtons = document.querySelectorAll('.add-to-cart a');
 
-// Check every Add to Cart link
 addToCartButtons.forEach(function(button) {
-
     button.addEventListener('click', function(event) {
+        event.preventDefault();
 
-        let foodCard = button.closest('.menu-card');
-        let foodName = foodCard.querySelector('.name h3').textContent;
-        let priceText = foodCard.querySelector('.price p').textContent;
-        let foodPrice = Number(priceText.replace('₱', '').trim());
-        let foodImage = foodCard.querySelector('img').getAttribute('src');
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        let foundFood = false;
+        let menuCard = button.closest('.menu-card');
 
-        for (let i = 0; i < cart.length; i++) {
+        let name = menuCard.querySelector('.name h3').textContent.trim();
 
-            if (cart[i].name === foodName) {
+        let priceText = menuCard.querySelector('.price p').textContent;
+        let price = parseFloat(priceText.replace(/[₱,]/g, ''));
 
-                // Increase the quantity if the food already exists
-                cart[i].quantity = cart[i].quantity + 1;
+        let image = menuCard.querySelector('img').getAttribute('src');
 
-                foundFood = true;
+        let category = menuCard.dataset.category;
 
-                break;
+        let standaloneRice =
+            menuCard.dataset.standaloneRice === 'true';
+
+        let existingItem = cart.find(function(item) {
+            return item.name === name &&
+                Boolean(item.standaloneRice) === standaloneRice;
+        });
+
+        if (existingItem) {
+            existingItem.quantity++;
+
+            // Add one default rice for each additional meal
+            if (category === 'meals' && !standaloneRice) {
+                existingItem.riceQuantity =
+                    (existingItem.riceQuantity || 0) + 1;
             }
-        }
-
-        // Add the food if it is not already in the cart
-        if (foundFood === false) {
-
-            let newFood = {
-                name: foodName,
-                price: foodPrice,
-                image: foodImage,
-                quantity: 1
+        } else {
+            let item = {
+                name: name,
+                price: price,
+                image: image,
+                quantity: 1,
+                category: category,
+                standaloneRice: standaloneRice,
+                riceQuantity:
+                category === 'meals' && !standaloneRice ? 1 : 0,
+                orderType: 'dine-in'
             };
 
-            cart.push(newFood);
+            cart.push(item);
         }
-        // Save the updated cart
+
         localStorage.setItem('cart', JSON.stringify(cart));
-        // Show a confirmation message
-        alert(foodName + ' added to cart!');
+
+        alert(name + ' added to cart!');
+
+        window.location.href = 'cart.html';
     });
 });
 

@@ -55,7 +55,7 @@ body {
 }
 
 .forCart table {
-    width: 59%;
+    width: 80%;
     margin: 50px auto 4%;
     border-collapse: separate;
     border-spacing: 0;
@@ -278,6 +278,41 @@ li {
     transform: scale(1.1);
 }
 
+/* Order Type */
+.order-type {
+    width: 82%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: var(--beige);
+    color: var(--darkblue);
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.order-type:focus {
+    border-color: #ffb300;
+}
+
+/* Rice Quantity */
+.rice-qty {
+    width: 80px;
+    padding: 8px;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: var(--beige);
+    color: var(--darkblue);
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.rice-qty:focus {
+    border-color: #ffb300;
+}
 
 /* Mobile Responsive */
 
