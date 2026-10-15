@@ -1,64 +1,73 @@
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-let addToCartButtons = document.querySelectorAll('.add-to-cart a');
+let addToCartButtons = document.querySelectorAll('.add-to-cart button');
 
 addToCartButtons.forEach(function(button) {
-    button.addEventListener('click', function(event) {
-        event.preventDefault();
+    button.addEventListener('click', function() {
 
         let menuCard = button.closest('.menu-card');
-
         let name = menuCard.querySelector('.name h3').textContent.trim();
 
-        let priceText = menuCard.querySelector('.price p').textContent;
-        let price = parseFloat(priceText.replace(/[₱,]/g, ''));
+        let answer = confirm('Add ' + name + ' to cart?');
 
-        let image = menuCard.querySelector('img').getAttribute('src');
+        if (answer == true) {
+            let priceText = menuCard.querySelector('.price p').textContent;
+            let price = parseFloat(priceText.replace(/[₱,]/g, ''));
+            let image = menuCard.querySelector('img').getAttribute('src');
+            let category = menuCard.dataset.category;
+            let standaloneRice = menuCard.dataset.standaloneRice === 'true';
 
-        let category = menuCard.dataset.category;
+            let existingItem = cart.find(function(item) {
+                return item.name === name &&
+                    Boolean(item.standaloneRice) === standaloneRice;
+            });
 
-        let standaloneRice =
-            menuCard.dataset.standaloneRice === 'true';
+            if (existingItem) {
+                existingItem.quantity++;
 
-        let existingItem = cart.find(function(item) {
-            return item.name === name &&
-                Boolean(item.standaloneRice) === standaloneRice;
-        });
+                // Add one default rice for each additional meal
+                if (category === 'meals' && !standaloneRice) {
+                    existingItem.riceQuantity =
+                        (existingItem.riceQuantity || 0) + 1;
+                }
+            } else {
+                let item = {
+                    name: name,
+                    price: price,
+                    image: image,
+                    quantity: 1,
+                    category: category,
+                    standaloneRice: standaloneRice,
+                    riceQuantity:
+                        category === 'meals' && !standaloneRice ? 1 : 0,
+                    orderType: 'dine-in'
+                };
 
-        if (existingItem) {
-            existingItem.quantity++;
-
-            // Add one default rice for each additional meal
-            if (category === 'meals' && !standaloneRice) {
-                existingItem.riceQuantity =
-                    (existingItem.riceQuantity || 0) + 1;
+                cart.push(item);
             }
-        } else {
-            let item = {
-                name: name,
-                price: price,
-                image: image,
-                quantity: 1,
-                category: category,
-                standaloneRice: standaloneRice,
-                riceQuantity:
-                category === 'meals' && !standaloneRice ? 1 : 0,
-                orderType: 'dine-in'
-            };
 
-            cart.push(item);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateQuantity();
         }
-
-        localStorage.setItem('cart', JSON.stringify(cart));
-
-        alert(name + ' added to cart!');
-
-        window.location.href = 'cart.html';
     });
 });
 
+// quantity logo
+let quantityLogo = document.querySelector('.quantity-logo');
 
-// FILTER MENU 
+let totalQuantity = cart.reduce(function(total, item) {
+    return total + item.quantity;
+}, 0);
+
+quantityLogo.textContent = totalQuantity;
+
+if (totalQuantity > 0) {
+    quantityLogo.style.display = 'flex';
+} else {
+    quantityLogo.style.display = 'none';
+}
+
+// FILTER MENU
 let searchForm = document.querySelector("#search-form");
 let searchInput = document.querySelector("#search");
 let menuCards = document.querySelectorAll(".menu-card");

@@ -1,3 +1,4 @@
+
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Get elements
@@ -23,166 +24,138 @@ function displayCart() {
         emptyMessage.style.display = 'block';
         cartTable.style.display = 'none';
         cartTotal.textContent = 'TOTAL: ₱0.00';
-        return;
     } else {
         emptyMessage.style.display = 'none';
         cartTable.style.display = 'table';
+
+        cart.forEach(function(item, index) {
+
+            let isStandaloneRice = item.standaloneRice === true;
+            let isMeal = item.category === 'meals' && !isStandaloneRice;
+
+            if (isMeal && item.riceQuantity === undefined) {
+                item.riceQuantity = item.quantity;
+            }
+
+            if (isMeal && item.orderType === undefined) {
+                item.orderType = 'dine-in';
+            }
+
+            let riceAdjustment = 0;
+
+            if (isMeal) {
+                riceAdjustment = (item.riceQuantity - item.quantity) * ricePrice;
+            }
+
+            let takeOutAdjustment = 0;
+
+            if (isMeal && item.orderType === 'take-out') {
+                takeOutAdjustment = takeOutFee * item.quantity;
+            }
+
+            let subtotal = (item.price * item.quantity)
+                + riceAdjustment
+                + takeOutAdjustment;
+
+            total += subtotal;
+
+            let riceInput = '';
+
+            if (isMeal) {
+                riceInput = `
+                    <input type="number"
+                        class="rice-qty"
+                        data-index="${index}"
+                        min="0"
+                        step="1"
+                        value="${item.riceQuantity}"
+                        required>
+                `;
+            } else {
+                riceInput = 'N/A';
+            }
+
+            let orderSelect = '';
+
+            if (isMeal) {
+
+                let dineInSelected = '';
+                let takeOutSelected = '';
+
+                if (item.orderType === 'dine-in') {
+                    dineInSelected = 'selected';
+                }
+
+                if (item.orderType === 'take-out') {
+                    takeOutSelected = 'selected';
+                }
+
+                orderSelect = `
+                    <select class="order-type" data-index="${index}">
+                        <option value="dine-in" ${dineInSelected}>
+                            Dine In
+                        </option>
+                        <option value="take-out" ${takeOutSelected}>
+                            Take Out (+₱10)
+                        </option>
+                    </select>
+                `;
+            } else {
+                orderSelect = 'N/A';
+            }
+
+            let row = `
+                <tr>
+                    <td>
+                        <img src="${item.image}"
+                            alt="${item.name}"
+                            class="img">
+                    </td>
+
+                    <td>${item.name}</td>
+
+                    <td class="price">
+                        ₱${item.price.toFixed(2)}
+                    </td>
+
+                    <td>
+                        <div class="quantity">
+                            <button type="button"
+                                class="minus-btn"
+                                data-index="${index}">−</button>
+
+                            <span class="quantity-number">
+                                ${item.quantity}
+                            </span>
+
+                            <button type="button"
+                                class="plus-btn"
+                                data-index="${index}">+</button>
+                        </div>
+                    </td>
+
+                    <td>${riceInput}</td>
+                    <td>${orderSelect}</td>
+
+                    <td class="price">
+                        ₱${subtotal.toFixed(2)}
+                    </td>
+
+                    <td>
+                        <button type="button"
+                            class="remove-btn"
+                            data-index="${index}">×</button>
+                    </td>
+                </tr>
+            `;
+
+            cartItems.innerHTML += row;
+        });
+
+        cartTotal.textContent = 'TOTAL: ₱' + total.toFixed(2);
     }
 
-    cart.forEach(function(item, index) {
-
-        let isStandaloneRice = item.standaloneRice === true;
-        let isMeal = item.category === 'meals' && !isStandaloneRice;
-
-        // Set default values for meals
-        if (isMeal && item.riceQuantity === undefined) {
-            item.riceQuantity = item.quantity;
-        }
-
-        if (isMeal && item.orderType === undefined) {
-            item.orderType = 'dine-in';
-        }
-
-        // Calculate rice adjustment
-        let riceAdjustment = 0;
-
-        if (isMeal) {
-            riceAdjustment = (item.riceQuantity - item.quantity) * ricePrice;
-        } else {
-            riceAdjustment = 0;
-        }
-
-        // Calculate take-out fee
-        let takeOutAdjustment = 0;
-
-        if (isMeal && item.orderType === 'take-out') {
-            takeOutAdjustment = takeOutFee * item.quantity;
-        } else {
-            takeOutAdjustment = 0;
-        }
-
-        // Calculate subtotal
-        let subtotal = (item.price * item.quantity)
-            + riceAdjustment
-            + takeOutAdjustment;
-
-        total += subtotal;
-
-        // Rice quantity HTML
-        let riceInput = '';
-
-        if (isMeal) {
-            riceInput = `
-                <input type="number"
-                    class="rice-qty"
-                    data-index="${index}"
-                    min="0"
-                    step="1"
-                    value="${item.riceQuantity}"
-                    required>
-            `;
-        } else {
-            riceInput = 'N/A';
-        }
-
-        // Order type HTML
-        let orderSelect = '';
-
-        if (isMeal) {
-
-            let dineInSelected = '';
-            let takeOutSelected = '';
-
-            if (item.orderType === 'dine-in') {
-                dineInSelected = 'selected';
-            } else {
-                dineInSelected = '';
-            }
-
-            if (item.orderType === 'take-out') {
-                takeOutSelected = 'selected';
-            } else {
-                takeOutSelected = '';
-            }
-
-            orderSelect = `
-                <select class="order-type"
-                    data-index="${index}">
-
-                    <option value="dine-in" ${dineInSelected}>
-                        Dine In
-                    </option>
-
-                    <option value="take-out" ${takeOutSelected}>
-                        Take Out (+₱10)
-                    </option>
-
-                </select>
-            `;
-
-        } else {
-            orderSelect = 'N/A';
-        }
-
-        // Create row
-        let row = `
-            <tr>
-                <td>
-                    <img src="${item.image}"
-                        alt="${item.name}"
-                        class="img">
-                </td>
-
-                <td>${item.name}</td>
-
-                <td class="price">
-                    ₱${item.price.toFixed(2)}
-                </td>
-
-                <td>
-                    <div class="quantity">
-                        <button type="button"
-                            class="minus-btn"
-                            data-index="${index}">−</button>
-
-                        <span class="quantity-number">
-                            ${item.quantity}
-                        </span>
-
-                        <button type="button"
-                            class="plus-btn"
-                            data-index="${index}">+</button>
-                    </div>
-                </td>
-
-                <td>
-                    ${riceInput}
-                </td>
-
-                <td>
-                    ${orderSelect}
-                </td>
-
-                <td class="price">
-                    ₱${subtotal.toFixed(2)}
-                </td>
-
-                <td>
-                    <button type="button"
-                        class="remove-btn"
-                        data-index="${index}">×</button>
-                </td>
-            </tr>
-        `;
-
-        cartItems.innerHTML += row;
-    });
-
-    // Save updated cart
     localStorage.setItem('cart', JSON.stringify(cart));
-
-    // Display total
-    cartTotal.textContent = 'TOTAL: ₱' + total.toFixed(2);
 }
 
 
@@ -211,8 +184,6 @@ cartItems.addEventListener('click', function(event) {
 
         if (isMeal) {
             item.riceQuantity = (item.riceQuantity || 0) + 1;
-        } else {
-            // No rice adjustment for non-meals
         }
 
     } else if (button.classList.contains('minus-btn')) {
@@ -226,8 +197,6 @@ cartItems.addEventListener('click', function(event) {
                     0,
                     (item.riceQuantity || 0) - 1
                 );
-            } else {
-                // No rice adjustment for non-meals
             }
 
         } else {
@@ -244,6 +213,7 @@ cartItems.addEventListener('click', function(event) {
 
     localStorage.setItem('cart', JSON.stringify(cart));
     displayCart();
+    updateQuantity();
 });
 
 
@@ -267,6 +237,7 @@ cartItems.addEventListener('change', function(event) {
 
     localStorage.setItem('cart', JSON.stringify(cart));
     displayCart();
+    updateQuantity();
 });
 
 
@@ -283,8 +254,10 @@ cartItems.addEventListener('change', function(event) {
 
     localStorage.setItem('cart', JSON.stringify(cart));
     displayCart();
+    updateQuantity();
 });
 
 
 // Display cart when page opens
 displayCart();
+updateQuantity();

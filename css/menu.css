@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     padding: 0;
@@ -8,7 +9,6 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
 }
-
 
 /* Search */
 
@@ -61,7 +61,6 @@ body {
     transform: translateY(-2px);
 }
 
-
 /* Categories */
 
 .category-section {
@@ -104,8 +103,6 @@ body {
     transform: translateY(-2px);
 }
 
-
-
 /* Menu Card */
 
 .menu-table {
@@ -116,13 +113,12 @@ body {
     gap: 25px;
 }
 
-/* MENU CARD */
 .menu-card {
-    height: 346px;
+    height: 324px;
     padding: 16px;
     box-sizing: border-box;
     background: var(--blue);
-    border-radius: 30px;
+    border-radius: 34px;
     text-align: center;
     box-shadow: 0 8px 25px rgba(6, 43, 99, 0.15);
     transition: 0.3s;
@@ -132,35 +128,43 @@ body {
     transform: translateY(-5px);
     box-shadow: 0 12px 30px rgba(6, 43, 99, 0.25);
 }
+
 /* Food Image */
+
 .menu-card .image img {
     width: 100%;
-    height: 180px;
+    height: 155px;
     object-fit: cover;
     border-radius: 15px;
 }
+
 /* Food Name */
+
 .menu-card .name h3 {
+    text-align: left;
     margin: 15px 0 6px;
     color: var(--yellow);
     font-size: 20px;
 }
+
 /* Price */
+
 .menu-card .price p {
+    text-align: left;
     margin: 5px 0 26px;
     color: var(--beige);
     font-size: 18px;
     font-weight: bold;
-    font-family:'Gill Sans','Gill Sans MT',Calibri,'Trebuchet MS',sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-/* Add To Cart */
-.add-to-cart a {
-    text-decoration: none;
-    width: 152px;
-    margin: 0 auto;
-    padding: 12px;
-    padding-left: 54px;
-    padding-right: 54px;
+
+/* Add To Cart Button */
+.add-to-cart button {
+    display: block;
+    width: 137px;
+    max-width: 100%;
+    margin-left: auto;
+    padding: 12px 20px;
     border: none;
     border-radius: 32px;
     background: var(--yellow);
@@ -169,18 +173,24 @@ body {
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+    box-sizing: border-box;
 }
-.add-to-cart a:hover {
+
+.add-to-cart button:hover {
     filter: brightness(1.2);
     transform: translateY(-2px);
 }
+
 /* View Cart */
+
 li {
     list-style: none;
 }
+
 li a {
     text-decoration: none;
 }
+
 .confirm {
     text-align: center;
     text-decoration: none;
@@ -194,46 +204,53 @@ li a {
     color: var(--beige);
     cursor: pointer;
     transition: 0.3s;
+    box-sizing: border-box;
 }
+
 .confirm h1 {
     margin: 0;
     font-size: 18px;
 }
+
 .confirm:hover {
     filter: brightness(1.2);
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(6, 43, 99, 0.25);
 }
 
-/* ACTIVE CATEGORY */
+/* Active Category */
+
 .category-section ul li a.active {
     background-color: var(--yellow);
     color: white;
 }
 
-/* NO RESULTS MESSAGE */
+/* No Results Message */
+
 #no-results {
     text-align: center;
     background-color: rgba(255, 255, 255, 0);
     color: var(--darkblue);
     border-radius: 15px;
     padding: 25px 20px;
-    margin: 30px auto;
-    margin-bottom: 70px;
+    margin: 30px auto 70px;
     width: 80%;
     max-width: 500px;
     font-size: 18px;
     font-weight: bold;
 }
 
-/* HIDDEN WHEN RESULTS EXIST */
+/* Hidden When Results Exist */
+
 #no-results[hidden] {
     display: none;
 }
 
+/* Mobile */
+
 @media (max-width: 768px) {
 
-    /* SEARCH */
+    /* Search */
 
     .search-section {
         width: 85%;
@@ -257,8 +274,7 @@ li a {
         font-size: 13px;
     }
 
-
-    /* CATEGORIES */
+    /* Categories */
 
     .category-section {
         width: 80%;
@@ -281,12 +297,11 @@ li a {
         border-radius: 18px;
     }
 
-
-    /* MENU CARDS */
+    /* Menu Cards */
 
     .menu-table {
         width: 81%;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 20px;
         margin-bottom: 30px;
     }
@@ -312,21 +327,17 @@ li a {
         margin: 13px 0 2px;
     }
 
+    /* Add To Cart */
 
-    /* ADD TO CART */
-
-    .add-to-cart a {
+    .add-to-cart button {
         position: relative;
         top: 15px;
-        width: 144px;
-        padding: 11px;
-        padding-left: 22px;
-        padding-right: 22px;
+        width: 100%;
+        padding: 11px 5px;
         font-size: 10px;
     }
 
-
-    /* VIEW CART */
+    /* View Cart */
 
     .confirm {
         width: 90%;

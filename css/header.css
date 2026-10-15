@@ -157,6 +157,23 @@ header{
     display: none;
 }
 
+/* quantity logo */
+
+.quantity-logo {
+    position: absolute;
+    background-color: #E53935;
+    top: -12px;
+    right: 0px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    font-size: 8px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 10;
+}
 
 /* PHONE */
 @media (max-width: 768px) {

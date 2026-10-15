@@ -454,21 +454,22 @@ body{
 }
 
 .btn2 {
+    display: block;
     color: #fff7eb;
     text-decoration: none;
     background-color: var(--blue);
-    width: 87px;
-    height: -2px;
-    padding: 16px 36px;
-    border-radius: 25px;
-   font-size: 18px;
+    width: 180px;
+    padding: 16px 20px;
+    margin-left: auto;
+    margin-right: 18px;
+    border-radius: 28px;
+    font-size: 18px;
     font-weight: bold;
+    text-align: center;
     transition: 0.3s ease;
-    position: relative;
-    left: 78%;
-    top: -7%;
-
+    box-sizing: border-box;
 }
+
 
 .btn2:hover {
     background-color: #bbcce8;
@@ -476,30 +477,30 @@ body{
 }
 
 .sbtn2 {
+    display: block;
+    width: 84px;
+    height: auto;
+    padding: 11px 27px;
+    margin-left: auto;
+    margin-right: 18px;
+
     color: #fff7eb;
     text-decoration: none;
     background-color: var(--yellow);
-    width: 106px;
-    height: -2px;
-    padding: 11px 27px;
-    border-radius: 17px;
-   font-size: 13px;
+    border-radius: 28px;
+    font-size: 13px;
     font-weight: bold;
 
-    position: relative;
-    left: 47%;
-    top: -2%;
     transition: 0.3s ease;
-
+    box-sizing: content-box;
 }
-
 .sbtn2:hover {
     background-color: #f5df89;
 }
 
 .imgf {
     width: 96%;
-    height: 60%;
+    height: 48%;
     object-fit: cover;
 
     position: relative;
@@ -521,7 +522,7 @@ body{
 .parent {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 420px 305px 305px;
+    grid-template-rows: 404px 318px 318px;
     grid-template-areas:
         "box1 box1 box1"
         "box3 box4 box5"
