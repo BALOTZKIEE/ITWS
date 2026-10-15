@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,9 +14,14 @@
     <link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
-
-    <!-- HEADER -->
+    <!-- SIDEBAR CHECKBOX -->
+    <input type="checkbox" id="sidebar-toggle">
+    <!-- HAMBURGER BUTTON -->
+    <label for="sidebar-toggle" class="menu-btn">
+        ☰
+    </label>
     <header>
+            <label for="sidebar-toggle" class="close-btn">&times;</label>
         <div class="align1">
             <img src="images/logo1.svg" class="logo2" alt="loading">
             <div id="logo">
@@ -25,7 +29,12 @@
                 <a href="#home" id="cafeteria">CAFETERIA</a>
             </div>
         </div>
-
+        <div class="nav-search">
+            <input type="text" id="nav-search" placeholder="Search menu...">
+            <button type="button" id="search-btn">
+            <img src="images/magnifying-glass (1).png" class="magnifying-glass"></img>
+            </button>
+        </div>
         <nav class="navbar">
             <ul>
                 <li><a href="index.html">HOME</a></li>
@@ -357,4 +366,3 @@
     <script src="js/quantity.js"></script>
 </body>
 </html>
-```

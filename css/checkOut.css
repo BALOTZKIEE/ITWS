@@ -236,6 +236,8 @@ input[type="radio"]:checked {
 
 .order-table thead {
     display: table;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
     width: 100%;
     table-layout: fixed;
     flex-shrink: 0;
@@ -247,6 +249,9 @@ input[type="radio"]:checked {
 /* SCROLLABLE FOOD ITEMS */
 
 .order-table tbody {
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    background-color: #00000022;
     display: block;
     flex: 1;
     min-height: 0;

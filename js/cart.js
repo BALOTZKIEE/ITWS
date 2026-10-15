@@ -1,4 +1,3 @@
-
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Get elements

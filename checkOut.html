@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,9 +15,12 @@
 </head>
 
 <body>
-
-    <!-- HEADER -->
+    <!-- HAMBURGER BUTTON -->
+    <label for="sidebar-toggle" class="menu-btn">
+        ☰
+    </label>
     <header>
+            <label for="sidebar-toggle" class="close-btn">&times;</label>
         <div class="align1">
             <img src="images/logo1.svg" class="logo2" alt="University Cafeteria Logo">
 
@@ -27,18 +29,18 @@
                 <a href="index.html" id="cafeteria">CAFETERIA</a>
             </div>
         </div>
-
+        <div class="nav-search">
+            <input type="text" id="nav-search" placeholder="Search menu...">
+            <button type="button" id="search-btn">
+            <img src="images/magnifying-glass (1).png" class="magnifying-glass"></img>
+            </button>
+        </div>
         <nav class="navbar">
             <ul>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="menu.html">MENU</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
-                <li>
-                    <a href="cart.html" class="active">
-                        <img src="images/shopping-cart.png" class="shopIcon" alt="">
-                        CART
-                    </a>
-                </li>
+                <li><a href="cart.html"><img src="images/shopping-cart.png" class="shopIcon" alt="cart">CART<h3 class="quantity-logo"></h3></a></li>
             </ul>
         </nav>
     </header>
@@ -148,19 +150,13 @@
                                     <td id="summary-total">₱0.00</td>
                                 </tr>
                             </tfoot>
-
                         </table>
-
                         <p id="summary-empty">
                             Your cart is empty.
                         </p>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
 
         <!-- CONFIRM ORDER -->

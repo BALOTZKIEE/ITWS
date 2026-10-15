@@ -52,21 +52,6 @@ addToCartButtons.forEach(function(button) {
     });
 });
 
-// quantity logo
-let quantityLogo = document.querySelector('.quantity-logo');
-
-let totalQuantity = cart.reduce(function(total, item) {
-    return total + item.quantity;
-}, 0);
-
-quantityLogo.textContent = totalQuantity;
-
-if (totalQuantity > 0) {
-    quantityLogo.style.display = 'flex';
-} else {
-    quantityLogo.style.display = 'none';
-}
-
 // FILTER MENU
 let searchForm = document.querySelector("#search-form");
 let searchInput = document.querySelector("#search");
