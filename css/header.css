@@ -206,7 +206,7 @@ header {
 .magnifying-glass {
     display: block;
     position: relative;
-    right: 5px;
+    right: 6px;
     width: 12px;
     height: 12px;
     object-fit: contain;
@@ -215,7 +215,7 @@ header {
 /* CART LINK */
 .cart-link {
     position: relative;
-    top: -1px; /* Move up; use 3px to move down */
+    top: -2px; /* Move up; use 3px to move down */
 
     display: flex;
     align-items: center;
@@ -297,9 +297,24 @@ header {
 }
 
 /* RIGHT SIDEBAR */
+
+/* RESPONSIVE SIDEBAR */
 @media screen and (max-width: 768px) {
 
-    /* BLUE HAMBURGER HEADER */
+    /* HIDE CHECKBOX */
+    #sidebar-toggle {
+        display: none;
+    }
+
+    .menu-btn span {
+    position: relative;
+    top: 10px;
+    color: var(--yellow);
+    font-size: 24px;
+    line-height: 1;
+}
+
+    /* HAMBURGER HEADER */
     .menu-btn {
         display: flex;
         position: fixed;
@@ -307,10 +322,10 @@ header {
         right: 0;
         z-index: 2000;
 
-        width: 500px;
-        height: 48px;
-        padding-top: 6px;
-        padding-right: 14px;
+        width: 450px;
+        height: 42px;
+        padding: 0 16px;
+
         justify-content: right;
         align-items: right;
 
@@ -332,23 +347,26 @@ header {
         right: 0;
         left: auto;
 
-        width: 250px;
+        width: 280px;
         max-width: 85vw;
         height: 100vh;
+        height: 100dvh;
 
-        padding: 60px 18px 25px;
+        padding: 60px 20px 25px;
         box-sizing: border-box;
 
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: stretch;
-        gap: 25px;
+        gap: 24px;
 
         background-color: var(--blue);
         box-shadow: -4px 0 15px rgba(0, 0, 0, 0.3);
+
         overflow-x: hidden;
         overflow-y: auto;
+
         z-index: 1500;
 
         transform: translateX(100%);
@@ -380,23 +398,31 @@ header {
         cursor: pointer;
     }
 
-    /* LOGO */
+    /* LOGO CONTAINER */
     .align1 {
         position: static;
+
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 5px;
+
+        width: 100%;
         margin: 0;
+        flex-shrink: 0;
     }
 
+    /* LOGO IMAGE */
     .logo2 {
+        display: block;
         width: 65px;
         height: auto;
     }
 
+    /* LOGO TEXT */
     #logo {
         position: static;
+
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -417,41 +443,58 @@ header {
         text-align: center;
     }
 
-    /* NAVIGATION */
+    /* NAVIGATION CONTAINER */
     .navbar {
+        position: static;
+        top: auto;
+        left: auto;
+        transform: none;
+
+        display: block;
         width: 100%;
     }
 
+    /* NAVIGATION LIST */
     .navbar ul {
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        gap: 10px;
+        justify-content: flex-start;
+        gap: 8px;
 
         width: 100%;
         margin: 0;
         padding: 0;
+
         list-style: none;
+        white-space: normal;
     }
 
     .navbar li {
         width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
+    /* NAVIGATION LINKS */
     .navbar a {
         position: relative;
+
         display: flex;
         align-items: center;
 
         width: 100%;
+        min-height: 42px;
         box-sizing: border-box;
-        padding: 13px 16px;
+
         margin: 0;
+        padding: 12px 16px;
+
+        border-radius: 12px;
 
         color: var(--beige);
         font-size: 13px;
         text-decoration: none;
-        border-radius: 12px;
     }
 
     /* ACTIVE AND HOVER LINKS */
@@ -460,19 +503,23 @@ header {
         color: var(--yellow);
     }
 
+    /* LINK UNDERLINE */
     .navbar a::after {
         content: "";
         position: absolute;
+
         left: 16px;
+        right: auto;
         bottom: 5px;
 
         width: 35px;
         height: 3px;
+
         background-color: var(--yellow);
         border-radius: 2px;
 
         transform: scaleX(0);
-        transform-origin: center;
+        transform-origin: left;
         transition: transform 0.3s ease;
     }
 
@@ -480,7 +527,7 @@ header {
         transform: scaleX(1);
     }
 
-    /* CART */
+    /* CART LINK */
     .navbar a[href="cart.html"] {
         display: flex;
         justify-content: flex-start;
@@ -488,89 +535,143 @@ header {
         gap: 10px;
 
         width: 100%;
+        min-height: 42px;
+
         margin: 0;
         padding: 12px 16px;
 
         background-color: var(--yellow);
         color: var(--beige);
+
         border-radius: 12px;
+        box-sizing: border-box;
     }
 
+    /* REMOVE CART UNDERLINE */
     .navbar a[href="cart.html"]::after {
         display: none;
     }
 
+    /* CART ICON */
     .shopIcon {
+        display: block;
+
         width: 18px;
         height: 18px;
+
         margin: 0;
         padding: 0;
+
         object-fit: contain;
         flex-shrink: 0;
     }
 
-    /* CART QUANTITY */
+    /* CART QUANTITY BADGE */
     .quantity-logo {
         position: absolute;
-        top: -2px;
-        left: 176px;
-        right: auto;
-
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
+        top: -5px;
+        right: -5px;
+        left: auto;
 
         display: none;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
 
+        width: 18px;
+        height: 18px;
+
+        border-radius: 50%;
         background-color: #ff4b4b;
         color: white;
-        font-size: 12px;
+
+        font-size: 10px;
         z-index: 10;
+    }
+
+    /* SEARCH AND CART CONTAINER */
+    .header-right {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        flex-shrink: 0;
     }
 
     /* SEARCH BAR */
     .nav-search {
         display: flex;
         align-items: center;
+        justify-content: flex-start;
 
         width: 100%;
+        min-width: 0;
         height: 40px;
+
         padding: 0 5px 0 12px;
         box-sizing: border-box;
 
         background-color: var(--beige);
+        border: 2px solid var(--yellow);
         border-radius: 25px;
+
+        flex-shrink: 0;
+        transition: none;
     }
 
-    .nav-search input {
+    /* DISABLE DESKTOP HOVER EXPANSION */
+    .nav-search:hover,
+    .nav-search:focus-within {
+        width: 100%;
+        padding: 0 5px 0 12px;
+        background-color: var(--beige);
+    }
+
+    /* SEARCH INPUT */
+    .nav-search input,
+    .nav-search:hover input,
+    .nav-search:focus-within input {
+        display: block;
+
         width: 100%;
         min-width: 0;
+        height: 100%;
+
+        padding: 0;
+        flex: 1;
+
         border: none;
         outline: none;
         background: transparent;
-        color: grey;
+
+        color: #333;
         font-size: 12px;
+        opacity: 1;
     }
 
     .nav-search input::placeholder {
         color: #777;
     }
 
+    /* SEARCH BUTTON */
     .nav-search button {
         display: flex;
         align-items: center;
         justify-content: center;
 
-        width: 32px;
-        height: 32px;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+
         flex-shrink: 0;
 
         border: none;
         border-radius: 50%;
-        background-color: var(--yellow);
-        color: var(--beige);
+
         cursor: pointer;
     }
 
@@ -578,13 +679,21 @@ header {
         filter: brightness(1.15);
     }
 
+    /* SEARCH ICON */
     .magnifying-glass {
-        font-size: 18px;
+        display: block;
+        position: static;
+
+        width: 14px;
+        height: 14px;
+
+        object-fit: contain;
     }
 
     /* PAGE CONTENT */
     body {
-        margin-right: 0;
         margin-left: 0;
+        margin-right: 0;
+        overflow-x: hidden;
     }
 }
