@@ -18,24 +18,47 @@
     <label for="sidebar-toggle" class="menu-btn">
         ☰
     </label>
-    <header>
-            <label for="sidebar-toggle" class="close-btn">&times;</label>
-        <div class="align1">
-        <img src="images/logo1.svg" class="logo2" alt="loading">
+<header>
+    <label for="sidebar-toggle" class="close-btn">&times;</label>
+
+    <!-- LOGO -->
+    <div class="align1">
+        <img src="images/logo1.svg" class="logo2" alt="University Cafeteria Logo">
+
         <div id="logo">
-            <a href="#home" id="university">UNIVERSITY</a>
-            <a href="#home" id="cafeteria">CAFETERIA</a>
+            <a href="index.html" id="university">UNIVERSITY</a>
+            <a href="index.html" id="cafeteria">CAFETERIA</a>
         </div>
+    </div>
+    <!-- CENTER NAVIGATION -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html" class="active">HOME</a></li>
+            <li><a href="menu.html">MENU</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+    <!-- RIGHT SIDE: SEARCH BAR AND CART -->
+    <div class="header-right">
+        <!-- SEARCH BAR -->
+        <div class="nav-search">
+            <input type="text" id="nav-search" placeholder="Search menu...">
+            <button type="button" id="search-btn">
+                <img
+                    src="images/magnifying-glass (1).png"
+                    class="magnifying-glass"
+                    alt="Search"
+                >
+            </button>
         </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="menu.html">MENU</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="cart.html"><img src="images/shopping-cart.png" class="shopIcon" alt="cart">CART<h3 class="quantity-logo"></h3></a></li>
-            </ul>
-        </nav>
-    </header>
+        <!-- CART -->
+        <a href="cart.html" class="cart-link">
+            <img src="images/shopping-cart.png" class="shopIcon" alt="">
+            CART
+            <span class="quantity-logo"></span>
+        </a>
+    </div>
+</header>
 
     <section class="special-title2">
         <div class="line"></div>
